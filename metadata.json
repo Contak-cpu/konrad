@@ -1,0 +1,5 @@
+{
+  "name": "Konrad Inversiones Inmobiliaria",
+  "description": "A web application for 'Konrad Inversiones + Desarrollos Inmobiliarios' to showcase annual rental properties, similar to an Airbnb platform. It features property listings, search and filter capabilities, and direct WhatsApp integration.",
+  "requestFramePermissions": []
+}

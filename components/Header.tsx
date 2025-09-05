@@ -29,6 +29,8 @@ const NavLink: React.FC<{ viewId: View; currentView: View; onViewChange: (id: Vi
 
 const Header: React.FC<HeaderProps> = ({ onViewChange, currentView }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const phoneNumber = "+54 2954 47-5417";
+  const whatsAppUrl = `https://wa.me/5492954475417`;
 
   const navLinks: { id: View; label: string }[] = [
     { id: 'home', label: 'Propiedades' },
@@ -38,6 +40,22 @@ const Header: React.FC<HeaderProps> = ({ onViewChange, currentView }) => {
 
   return (
     <header className="bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-50">
+      {/* Barra superior con contacto */}
+      <div className="bg-primary-900 text-white py-2">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center text-sm">
+            <div className="flex items-center space-x-4">
+              <span>📞 {phoneNumber}</span>
+              <span>✉️ consultas@konradinversiones.com</span>
+            </div>
+            <div className="hidden sm:block">
+              <span>🏢 Av. Ameghino 602, Santa Rosa, La Pampa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Navegación principal */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <a onClick={(e) => { e.preventDefault(); onViewChange('home'); }} className="flex-shrink-0 cursor-pointer">
@@ -52,6 +70,16 @@ const Header: React.FC<HeaderProps> = ({ onViewChange, currentView }) => {
               </NavLink>
             ))}
           </nav>
+          <div className="hidden md:flex items-center space-x-4">
+            <a 
+              href={whatsAppUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
+            >
+              WhatsApp
+            </a>
+          </div>
           <div className="md:hidden">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-600 hover:text-primary-600" aria-label="Abrir menú">
               {isMenuOpen ? <XIcon /> : <MenuIcon />}

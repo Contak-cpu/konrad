@@ -9,6 +9,9 @@ const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => ( <svg xmlns="htt
 
 const Footer: React.FC = () => {
   const whatsAppUrl = `https://wa.me/${WHATSAPP_NUMBER}`;
+  const phoneNumber = "+54 2954 47-5417";
+  const email = "consultas@konradinversiones.com";
+  const officeAddress = "Av. Ameghino 602, Santa Rosa, La Pampa";
 
   const socialLinks = [
     { name: 'WhatsApp', href: whatsAppUrl, icon: <WhatsAppIcon className="h-6 w-6"/> },
@@ -18,12 +21,38 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-primary-900 text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div>
-                <h3 className="text-xl font-bold">Konrad Inversiones</h3>
-                <p className="mt-1 text-primary-200 text-sm">Desarrollos inmobiliarios y alquileres.</p>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Información de la empresa */}
+          <div className="lg:col-span-2">
+            <h3 className="text-2xl font-bold mb-4">Konrad Inversiones</h3>
+            <p className="text-primary-200 mb-4">Desarrollos inmobiliarios y alquileres en Santa Rosa, La Pampa.</p>
+            <div className="space-y-2">
+              <p className="text-sm text-primary-300">
+                <span className="font-semibold">Dirección:</span> {officeAddress}
+              </p>
+              <p className="text-sm text-primary-300">
+                <span className="font-semibold">Teléfono:</span> {phoneNumber}
+              </p>
+              <p className="text-sm text-primary-300">
+                <span className="font-semibold">Email:</span> {email}
+              </p>
             </div>
+          </div>
+
+          {/* Horarios */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Horarios</h4>
+            <div className="space-y-2 text-sm text-primary-300">
+              <p>Lunes a Viernes: 9:00 - 18:00 hs</p>
+              <p>Sábados: 9:00 - 13:00 hs</p>
+              <p>Domingos: Cerrado</p>
+            </div>
+          </div>
+
+          {/* Redes sociales */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Síguenos</h4>
             <div className="flex items-center gap-4">
               {socialLinks.map(link => (
                 <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="text-primary-200 hover:text-white transition-colors" aria-label={`Visita nuestro ${link.name}`}>
@@ -31,7 +60,9 @@ const Footer: React.FC = () => {
                 </a>
               ))}
             </div>
+          </div>
         </div>
+        
         <div className="mt-8 border-t border-primary-800 pt-6 text-center text-sm text-primary-300">
           <p>&copy; {new Date().getFullYear()} Konrad Inversiones + Desarrollos Inmobiliarios. Todos los derechos reservados.</p>
         </div>

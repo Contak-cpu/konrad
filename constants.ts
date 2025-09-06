@@ -41,8 +41,8 @@ export const properties: Property[] = [
     description: "Ambientes integrados de cocina-comedor y dormitorio, más baño. Ideal para una persona o pareja.",
     available: "Inmediato",
     features: ["Cocina integrada", "Baño completo", "Ambiente único", "Luminoso"],
-    imageUrl: "https://picsum.photos/seed/prop1/800/600",
-    images: ["https://picsum.photos/seed/prop1/1200/800", "https://picsum.photos/seed/prop1_2/1200/800", "https://picsum.photos/seed/prop1_3/1200/800"]
+    imageUrl: "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/494219895_1271628771484962_4565521542645524413_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEchluIyFfkqHuhj7Ip3TWLO0abR5CNlMg7RptHkI2UyEr11cmdzO2wyUznUSnal9EquEockMPbbwPcelkcpiUx&_nc_ohc=lVmZLS79Gd8Q7kNvwFkjcWw&_nc_oc=Adl72E8iUkhLwzy38bUvNzzKtsMjdC6CyCsCCRf6PiGqy_r94dQcVFHwc00xAVDga8g&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=yjQwa5keOFIhSulCWuSkig&oh=00_AfZS2WzsqdMm-OjCcrBUfzkTmUYaJ_0GVc97aZtS71vbMg&oe=68C29023",
+    images: ["https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/494219895_1271628771484962_4565521542645524413_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEchluIyFfkqHuhj7Ip3TWLO0abR5CNlMg7RptHkI2UyEr11cmdzO2wyUznUSnal9EquEockMPbbwPcelkcpiUx&_nc_ohc=lVmZLS79Gd8Q7kNvwFkjcWw&_nc_oc=Adl72E8iUkhLwzy38bUvNzzKtsMjdC6CyCsCCRf6PiGqy_r94dQcVFHwc00xAVDga8g&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=yjQwa5keOFIhSulCWuSkig&oh=00_AfZS2WzsqdMm-OjCcrBUfzkTmUYaJ_0GVc97aZtS71vbMg&oe=68C29023"]
   },
   {
     id: 2,

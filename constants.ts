@@ -52,20 +52,21 @@ export const properties: Property[] = [
       "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/494219895_1271628771484962_4565521542645524413_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEchluIyFfkqHuhj7Ip3TWLO0abR5CNlMg7RptHkI2UyEr11cmdzO2wyUznUSnal9EquEockMPbbwPcelkcpiUx&_nc_ohc=lVmZLS79Gd8Q7kNvwFkjcWw&_nc_oc=Adl72E8iUkhLwzy38bUvNzzKtsMjdC6CyCsCCRf6PiGqy_r94dQcVFHwc00xAVDga8g&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=yjQwa5keOFIhSulCWuSkig&oh=00_AfZS2WzsqdMm-OjCcrBUfzkTmUYaJ_0GVc97aZtS71vbMg&oe=68C29023"
     ]
   },
-  {
-    id: 2,
-    title: "Departamento 1 Dormitorio en Beruti",
-    address: "Beruti 361",
-    type: "Departamento",
-    rooms: 1,
-    price: 320000,
-    additionalCosts: 25000,
-    description: "Cómodo departamento de un dormitorio con cocina separada y living comedor.",
-    available: "Inmediato",
-    features: ["1 Dormitorio", "Cocina separada", "Living-comedor", "Balcón"],
-    imageUrl: "https://picsum.photos/seed/prop2/800/600",
-    images: ["https://picsum.photos/seed/prop2/1200/800", "https://picsum.photos/seed/prop2_2/1200/800", "https://picsum.photos/seed/prop2_3/1200/800"]
-  },
+  // TEMPORALMENTE OCULTO - Sin fotos propias
+  // {
+  //   id: 2,
+  //   title: "Departamento 1 Dormitorio en Beruti",
+  //   address: "Beruti 361",
+  //   type: "Departamento",
+  //   rooms: 1,
+  //   price: 320000,
+  //   additionalCosts: 25000,
+  //   description: "Cómodo departamento de un dormitorio con cocina separada y living comedor.",
+  //   available: "Inmediato",
+  //   features: ["1 Dormitorio", "Cocina separada", "Living-comedor", "Balcón"],
+  //   imageUrl: "https://picsum.photos/seed/prop2/800/600",
+  //   images: ["https://picsum.photos/seed/prop2/1200/800", "https://picsum.photos/seed/prop2_2/1200/800", "https://picsum.photos/seed/prop2_3/1200/800"]
+  // },
   {
     id: 3,
     title: "Departamento 2 Dormitorios en Ferrando",
@@ -166,62 +167,66 @@ export const properties: Property[] = [
       "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/542693392_1344959997485172_7895993102785036459_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHzExVHh8GD-V6BTh6Aq7Vcx50YWtUasG3HnRha1RqwbTm9S-04vY5RtB3BDDtICf_BusRi5Y8B3qii-28v_ZlX&_nc_ohc=fEQNrdXCwnUQ7kNvwE5-ONU&_nc_oc=AdllWQ-Zwr-2sKTFHS_ilhKSlLQyXWHlRX8dWBhoWjmmAGLV6eXDiyRJzXgDFepGpPA&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=gE34PbbvHT_p8rqCItSeAg&oh=00_Afb6HQ0QEyyrFVQFBQjaoRIqF5VyJbssPX9hg9PS77NMIA&oe=68C26E34"
     ]
   },
-  {
-    id: 7,
-    title: "Local Comercial en Hugo del Carril",
-    address: "Hugo del Carril 1234",
-    type: "Local comercial",
-    rooms: 0,
-    price: 500000,
-    additionalCosts: "IVA",
-    description: "Amplio local comercial a la calle con gran vidriera. Alto tránsito peatonal y vehicular.",
-    available: "Inmediato",
-    features: ["Excelente ubicación", "Gran vidriera", "Salón principal amplio", "Baño y depósito"],
-    imageUrl: "https://picsum.photos/seed/prop7/800/600",
-     images: ["https://picsum.photos/seed/prop7/1200/800", "https://picsum.photos/seed/prop7_2/1200/800", "https://picsum.photos/seed/prop7_3/1200/800"]
-  },
-  {
-    id: 8,
-    title: "Departamento 2 Dormitorios a estrenar",
-    address: "Av. Luro 1550",
-    type: "Departamento",
-    rooms: 2,
-    price: 480000,
-    additionalCosts: 40000,
-    description: "Moderno departamento a estrenar con balcón. Excelentes terminaciones y luminosidad.",
-    available: "Septiembre",
-    features: ["A estrenar", "2 Dormitorios", "Balcón", "Pisos de porcelanato"],
-    imageUrl: "https://picsum.photos/seed/prop8/800/600",
-     images: ["https://picsum.photos/seed/prop8/1200/800", "https://picsum.photos/seed/prop8_2/1200/800", "https://picsum.photos/seed/prop8_3/1200/800"]
-  },
-  {
-    id: 9,
-    title: "Moderno Monoambiente céntrico",
-    address: "Corrientes 720",
-    type: "Monoambiente",
-    rooms: 0,
-    price: 350000,
-    additionalCosts: 28000,
-    description: "Funcional monoambiente en el corazón de la ciudad, con cocina integrada y balcón.",
-    available: "Septiembre",
-    features: ["Ubicación céntrica", "Balcón", "Cocina eléctrica", "Edificio moderno"],
-    imageUrl: "https://picsum.photos/seed/prop9/800/600",
-     images: ["https://picsum.photos/seed/prop9/1200/800", "https://picsum.photos/seed/prop9_2/1200/800", "https://picsum.photos/seed/prop9_3/1200/800"]
-  },
-  {
-    id: 10,
-    title: "Casa con pileta en Barrio Privado",
-    address: "Barrio Los Pinos Lote 42",
-    type: "Casa",
-    rooms: 3,
-    price: 950000,
-    additionalCosts: 120000,
-    description: "Impresionante casa de 3 dormitorios con pileta, quincho y gran jardín en barrio privado con seguridad.",
-    available: "Septiembre",
-    features: ["3 Dormitorios", "Pileta y jardín", "Quincho con parrilla", "Seguridad privada"],
-    imageUrl: "https://picsum.photos/seed/prop10/800/600",
-     images: ["https://picsum.photos/seed/prop10/1200/800", "https://picsum.photos/seed/prop10_2/1200/800", "https://picsum.photos/seed/prop10_3/1200/800"]
-  },
+  // TEMPORALMENTE OCULTO - Sin fotos propias
+  // {
+  //   id: 7,
+  //   title: "Local Comercial en Hugo del Carril",
+  //   address: "Hugo del Carril 1234",
+  //   type: "Local comercial",
+  //   rooms: 0,
+  //   price: 500000,
+  //   additionalCosts: "IVA",
+  //   description: "Amplio local comercial a la calle con gran vidriera. Alto tránsito peatonal y vehicular.",
+  //   available: "Inmediato",
+  //   features: ["Excelente ubicación", "Gran vidriera", "Salón principal amplio", "Baño y depósito"],
+  //   imageUrl: "https://picsum.photos/seed/prop7/800/600",
+  //    images: ["https://picsum.photos/seed/prop7/1200/800", "https://picsum.photos/seed/prop7_2/1200/800", "https://picsum.photos/seed/prop7_3/1200/800"]
+  // },
+  // TEMPORALMENTE OCULTO - Sin fotos propias
+  // {
+  //   id: 8,
+  //   title: "Departamento 2 Dormitorios a estrenar",
+  //   address: "Av. Luro 1550",
+  //   type: "Departamento",
+  //   rooms: 2,
+  //   price: 480000,
+  //   additionalCosts: 40000,
+  //   description: "Moderno departamento a estrenar con balcón. Excelentes terminaciones y luminosidad.",
+  //   available: "Septiembre",
+  //   features: ["A estrenar", "2 Dormitorios", "Balcón", "Pisos de porcelanato"],
+  //   imageUrl: "https://picsum.photos/seed/prop8/800/600",
+  //    images: ["https://picsum.photos/seed/prop8/1200/800", "https://picsum.photos/seed/prop8_2/1200/800", "https://picsum.photos/seed/prop8_3/1200/800"]
+  // },
+  // TEMPORALMENTE OCULTO - Sin fotos propias
+  // {
+  //   id: 9,
+  //   title: "Moderno Monoambiente céntrico",
+  //   address: "Corrientes 720",
+  //   type: "Monoambiente",
+  //   rooms: 0,
+  //   price: 350000,
+  //   additionalCosts: 28000,
+  //   description: "Funcional monoambiente en el corazón de la ciudad, con cocina integrada y balcón.",
+  //   available: "Septiembre",
+  //   features: ["Ubicación céntrica", "Balcón", "Cocina eléctrica", "Edificio moderno"],
+  //   imageUrl: "https://picsum.photos/seed/prop9/800/600",
+  //    images: ["https://picsum.photos/seed/prop9/1200/800", "https://picsum.photos/seed/prop9_2/1200/800", "https://picsum.photos/seed/prop9_3/1200/800"]
+  // },
+  // TEMPORALMENTE OCULTO - Sin fotos propias
+  // {
+  //   id: 10,
+  //   title: "Casa con pileta en Barrio Privado",
+  //   address: "Barrio Los Pinos Lote 42",
+  //   type: "Casa",
+  //   rooms: 3,
+  //   price: 950000,
+  //   additionalCosts: 120000,
+  //   description: "Impresionante casa de 3 dormitorios con pileta, quincho y gran jardín en barrio privado con seguridad.",
+  //   available: "Septiembre",
+  //   features: ["3 Dormitorios", "Pileta y jardín", "Quincho con parrilla", "Seguridad privada"],
+  //   imageUrl: "https://picsum.photos/seed/prop10/800/600",
+  //    images: ["https://picsum.photos/seed/prop10/1200/800", "https://picsum.photos/seed/prop10_2/1200/800", "https://picsum.photos/seed/prop10_3/1200/800"]
+  // },
   {
     id: 11,
     title: "Casa Quinta a estrenar en Saluzzi",

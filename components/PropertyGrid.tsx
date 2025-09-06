@@ -13,15 +13,15 @@ const PropertyGrid: React.FC<PropertyGridProps> = ({ properties, onSelectPropert
   return (
     <div className="bg-gray-100 py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
-            <h2 className="text-3xl font-bold text-gray-800 text-center sm:text-left">Nuestras Propiedades</h2>
-            <div className="flex items-center gap-2">
-                <label htmlFor="sort-by" className="text-gray-600 font-medium">Ordenar por:</label>
+        <div className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-8 gap-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center sm:text-left">Nuestras Propiedades</h2>
+            <div className="flex flex-col sm:flex-row items-center gap-2">
+                <label htmlFor="sort-by" className="text-gray-600 font-medium text-sm sm:text-base">Ordenar por:</label>
                 <select 
                     id="sort-by"
                     value={sort}
                     onChange={(e) => setSort(e.target.value as SortOption)}
-                    className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white text-gray-700"
+                    className="px-3 sm:px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white text-gray-700 text-sm sm:text-base"
                 >
                     <option value="default">Recomendados</option>
                     <option value="price_asc">Precio: más bajo</option>
@@ -31,7 +31,7 @@ const PropertyGrid: React.FC<PropertyGridProps> = ({ properties, onSelectPropert
         </div>
         
         {properties.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {properties.map(property => (
               <PropertyCard key={property.id} property={property} onSelectProperty={onSelectProperty} />
             ))}

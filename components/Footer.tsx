@@ -21,20 +21,20 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-primary-900 text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Información de la empresa */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">Konrad Inversiones</h3>
-            <p className="text-primary-200 mb-4">Desarrollos inmobiliarios y alquileres en Santa Rosa, La Pampa.</p>
-            <div className="space-y-2">
-              <p className="text-sm text-primary-300">
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Konrad Inversiones</h3>
+            <p className="text-sm sm:text-base text-primary-200 mb-3 sm:mb-4">Desarrollos inmobiliarios y alquileres en Santa Rosa, La Pampa.</p>
+            <div className="space-y-1 sm:space-y-2">
+              <p className="text-xs sm:text-sm text-primary-300">
                 <span className="font-semibold">Dirección:</span> {officeAddress}
               </p>
-              <p className="text-sm text-primary-300">
+              <p className="text-xs sm:text-sm text-primary-300">
                 <span className="font-semibold">Teléfono:</span> {phoneNumber}
               </p>
-              <p className="text-sm text-primary-300">
+              <p className="text-xs sm:text-sm text-primary-300">
                 <span className="font-semibold">Email:</span> {email}
               </p>
             </div>
@@ -42,8 +42,8 @@ const Footer: React.FC = () => {
 
           {/* Horarios */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Horarios</h4>
-            <div className="space-y-2 text-sm text-primary-300">
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Horarios</h4>
+            <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-primary-300">
               <p>Lunes a Viernes: 9:00 - 18:00 hs</p>
               <p>Sábados: 9:00 - 13:00 hs</p>
               <p>Domingos: Cerrado</p>
@@ -52,8 +52,8 @@ const Footer: React.FC = () => {
 
           {/* Redes sociales */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Síguenos</h4>
-            <div className="flex items-center gap-4">
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Síguenos</h4>
+            <div className="flex items-center gap-3 sm:gap-4">
               {socialLinks.map(link => (
                 <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="text-primary-200 hover:text-white transition-colors" aria-label={`Visita nuestro ${link.name}`}>
                   {link.icon}
@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        <div className="mt-8 border-t border-primary-800 pt-6 text-center text-sm text-primary-300">
+        <div className="mt-6 sm:mt-8 border-t border-primary-800 pt-4 sm:pt-6 text-center text-xs sm:text-sm text-primary-300">
           <p>&copy; {new Date().getFullYear()} Konrad Inversiones + Desarrollos Inmobiliarios. Todos los derechos reservados.</p>
         </div>
       </div>

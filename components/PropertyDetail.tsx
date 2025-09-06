@@ -49,48 +49,48 @@ const PropertyDetail: React.FC<PropertyDetailProps> = ({ property, onBack }) => 
                 <span className="cursor-pointer hover:underline" onClick={onBack}>Propiedades</span> / <span className="font-medium text-gray-700">{property.title}</span>
             </div>
             
-            <h1 className="text-3xl lg:text-4xl font-bold text-gray-900">{property.title}</h1>
-            <div className="flex items-center text-gray-600 mt-2 mb-6">
-                <MapPinIcon className="h-5 w-5 mr-2" />
-                <span>{property.address}</span>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">{property.title}</h1>
+            <div className="flex items-center text-gray-600 mt-2 mb-4 sm:mb-6">
+                <MapPinIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2 flex-shrink-0" />
+                <span className="text-sm sm:text-base">{property.address}</span>
             </div>
 
             <ImageGallery images={images} alt={property.title} />
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
-                <div className="lg:col-span-2 bg-white p-6 rounded-lg shadow-sm border">
-                    <div className="flex justify-between items-start pb-4 border-b">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mt-6 sm:mt-8">
+                <div className="lg:col-span-2 bg-white p-4 sm:p-6 rounded-lg shadow-sm border">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start pb-4 border-b gap-3 sm:gap-0">
                         <div>
-                            <h2 className="text-2xl font-semibold">{property.type} en alquiler</h2>
+                            <h2 className="text-xl sm:text-2xl font-semibold">{property.type} en alquiler</h2>
                              <div className="flex items-center text-gray-600 mt-2">
-                                <BedIcon className="h-5 w-5 mr-2 text-primary-600"/>
-                                <span>{property.rooms} {property.rooms === 1 ? 'Dormitorio' : property.rooms === 0 ? 'Ambiente único' : 'Dormitorios'}</span>
+                                <BedIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-primary-600"/>
+                                <span className="text-sm sm:text-base">{property.rooms} {property.rooms === 1 ? 'Dormitorio' : property.rooms === 0 ? 'Ambiente único' : 'Dormitorios'}</span>
                             </div>
                         </div>
-                         <div className={`px-4 py-2 rounded-full font-medium ${property.available === 'Inmediato' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}`}>
+                         <div className={`px-3 sm:px-4 py-2 rounded-full font-medium text-sm sm:text-base ${property.available === 'Inmediato' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'} self-start sm:self-auto`}>
                             {property.available}
                         </div>
                     </div>
                     
-                    <div className="mt-6">
-                        <h3 className="text-xl font-semibold mb-2">Descripción</h3>
-                        <p className="text-gray-700 leading-relaxed">{property.description}</p>
+                    <div className="mt-4 sm:mt-6">
+                        <h3 className="text-lg sm:text-xl font-semibold mb-2">Descripción</h3>
+                        <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{property.description}</p>
                     </div>
 
-                    <div className="mt-6">
-                        <h3 className="text-xl font-semibold mb-3">Características Principales</h3>
-                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                    <div className="mt-4 sm:mt-6">
+                        <h3 className="text-lg sm:text-xl font-semibold mb-3">Características Principales</h3>
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-2">
                             {property.features.map((feature, index) => (
-                                <li key={index} className="flex items-center text-gray-700">
-                                    <CheckIcon className="h-5 w-5 mr-2 text-green-500 flex-shrink-0"/>
+                                <li key={index} className="flex items-center text-gray-700 text-sm sm:text-base">
+                                    <CheckIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-green-500 flex-shrink-0"/>
                                     {feature}
                                 </li>
                             ))}
                         </ul>
                     </div>
 
-                     <div className="mt-6">
-                        <h3 className="text-xl font-semibold mb-2">Ubicación</h3>
+                     <div className="mt-4 sm:mt-6">
+                        <h3 className="text-lg sm:text-xl font-semibold mb-2">Ubicación</h3>
                          <div className="aspect-video w-full rounded-lg overflow-hidden border shadow-md">
                              <iframe
                                 src={mapEmbedUrl}
@@ -107,10 +107,10 @@ const PropertyDetail: React.FC<PropertyDetailProps> = ({ property, onBack }) => 
                 </div>
 
                 <div className="lg:sticky top-24 h-fit">
-                    <div className="bg-white p-6 rounded-lg shadow-lg border">
-                        <p className="text-3xl font-extrabold text-gray-900">{formatPrice(property.price)} <span className="text-base font-normal text-gray-500">/ mes</span></p>
+                    <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg border">
+                        <p className="text-2xl sm:text-3xl font-extrabold text-gray-900">{formatPrice(property.price)} <span className="text-sm sm:text-base font-normal text-gray-500">/ mes</span></p>
                         
-                        <div className="mt-4 border-t pt-4 space-y-2 text-gray-700">
+                        <div className="mt-3 sm:mt-4 border-t pt-3 sm:pt-4 space-y-2 text-gray-700 text-sm sm:text-base">
                            <div className="flex justify-between">
                                <span>Alquiler</span>
                                <span>{formatPrice(property.price)}</span>
@@ -127,11 +127,12 @@ const PropertyDetail: React.FC<PropertyDetailProps> = ({ property, onBack }) => 
                            </div>
                         </div>
 
-                        <button onClick={openWhatsApp} className="mt-6 w-full bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-lg flex items-center justify-center gap-2 transition-colors font-bold text-lg">
-                            <WhatsAppIcon className="h-6 w-6" />
-                            Consultar por WhatsApp
+                        <button onClick={openWhatsApp} className="mt-4 sm:mt-6 w-full bg-green-500 hover:bg-green-600 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg flex items-center justify-center gap-2 transition-colors font-bold text-base sm:text-lg">
+                            <WhatsAppIcon className="h-5 w-5 sm:h-6 sm:w-6" />
+                            <span className="hidden xs:inline">Consultar por WhatsApp</span>
+                            <span className="xs:hidden">WhatsApp</span>
                         </button>
-                        <p className="text-xs text-gray-500 text-center mt-3">Recibirás una respuesta a la brevedad.</p>
+                        <p className="text-xs text-gray-500 text-center mt-2 sm:mt-3">Recibirás una respuesta a la brevedad.</p>
                     </div>
                 </div>
             </div>

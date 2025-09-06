@@ -25,21 +25,21 @@ const FaqComponent: React.FC<{ item: FaqItem }> = ({ item }) => (
 
 const TimelineStep: React.FC<{ icon: React.ReactNode; title: string; description: string; details?: { icon: React.ReactNode; text: string }[]; isLast?: boolean }> = ({ icon, title, description, details, isLast }) => (
   <div className="relative flex items-start">
-    <div className="flex flex-col items-center mr-6">
-      <div className="flex-shrink-0 w-16 h-16 bg-white border-2 border-primary-500 rounded-full flex items-center justify-center z-10">
+    <div className="flex flex-col items-center mr-4 sm:mr-6">
+      <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 bg-white border-2 border-primary-500 rounded-full flex items-center justify-center z-10">
         {icon}
       </div>
       {!isLast && <div className="w-px h-full bg-primary-200 mt-2"></div>}
     </div>
-    <div className={`pt-3 ${isLast ? '' : 'pb-12'}`}>
-      <h3 className="text-xl font-bold text-gray-800 mb-2">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+    <div className={`pt-2 sm:pt-3 ${isLast ? '' : 'pb-8 sm:pb-12'}`}>
+      <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">{title}</h3>
+      <p className="text-sm sm:text-base text-gray-600">{description}</p>
       {details && (
-        <div className="mt-4 space-y-3">
+        <div className="mt-3 sm:mt-4 space-y-2 sm:space-y-3">
           {details.map((detail, index) => (
-            <div key={index} className="flex items-start p-3 bg-primary-50/50 border border-primary-100 rounded-lg">
-              <div className="flex-shrink-0 mr-3 text-primary-600">{detail.icon}</div>
-              <p className="text-sm text-gray-700">{detail.text}</p>
+            <div key={index} className="flex items-start p-2 sm:p-3 bg-primary-50/50 border border-primary-100 rounded-lg">
+              <div className="flex-shrink-0 mr-2 sm:mr-3 text-primary-600">{detail.icon}</div>
+              <p className="text-xs sm:text-sm text-gray-700">{detail.text}</p>
             </div>
           ))}
         </div>
@@ -58,7 +58,7 @@ const RequirementsSection: React.FC = () => {
           <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Un proceso claro y transparente diseñado para tu tranquilidad.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-16 items-start">
           {/* Timeline */}
           <div className="lg:col-span-3">
             <div className="flow-root">
@@ -97,8 +97,8 @@ const RequirementsSection: React.FC = () => {
 
           {/* FAQ */}
           <div className="lg:col-span-2">
-            <div className="bg-white p-6 rounded-lg shadow-lg border sticky top-24">
-              <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center">Preguntas Frecuentes</h3>
+            <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg border lg:sticky lg:top-24">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 text-center">Preguntas Frecuentes</h3>
               <div className="text-left">
                   {FAQ_DATA.map((item, index) => <FaqComponent key={index} item={item} />)}
               </div>

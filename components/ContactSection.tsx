@@ -11,26 +11,26 @@ const ClockIcon = (props: React.SVGProps<SVGSVGElement>) => ( <svg xmlns="http:/
 const ContactCard: React.FC<{ icon: React.ReactNode; title: string; children: React.ReactNode; href?: string; }> = ({ icon, title, children, href }) => {
     const content = (
         <>
-            <div className="flex-shrink-0 w-12 h-12 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center">
+            <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center">
                 {icon}
             </div>
-            <div className="ml-4">
-                <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
-                <div className="mt-1 text-gray-600">{children}</div>
+            <div className="ml-3 sm:ml-4">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-800">{title}</h3>
+                <div className="mt-1 text-sm sm:text-base text-gray-600">{children}</div>
             </div>
         </>
     );
 
     if (href) {
         return (
-            <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-start p-6 bg-white rounded-lg shadow-sm border hover:shadow-md hover:border-primary-300 transition-all">
+            <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-start p-4 sm:p-6 bg-white rounded-lg shadow-sm border hover:shadow-md hover:border-primary-300 transition-all">
                 {content}
             </a>
         );
     }
 
     return (
-        <div className="flex items-start p-6 bg-white rounded-lg shadow-sm border">
+        <div className="flex items-start p-4 sm:p-6 bg-white rounded-lg shadow-sm border">
             {content}
         </div>
     );
@@ -60,7 +60,7 @@ const ContactSection: React.FC = () => {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             <ContactCard
                 icon={<WhatsAppIcon className="h-6 w-6" />}
                 title="WhatsApp"
@@ -89,7 +89,7 @@ const ContactSection: React.FC = () => {
             </ContactCard>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-6 sm:mt-8">
              <ContactCard
                 icon={<MapPinIcon className="h-6 w-6" />}
                 title="Nuestra Oficina"

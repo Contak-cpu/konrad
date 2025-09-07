@@ -42,7 +42,8 @@ export const properties: Property[] = [
     available: "Inmediato",
     features: ["Cocina integrada", "Baño completo", "Ambiente único", "Luminoso"],
     imageUrl: "https://picsum.photos/seed/prop1/800/600",
-    images: ["https://picsum.photos/seed/prop1/1200/800", "https://picsum.photos/seed/prop1_2/1200/800", "https://picsum.photos/seed/prop1_3/1200/800"]
+    images: ["https://picsum.photos/seed/prop1/1200/800", "https://picsum.photos/seed/prop1_2/1200/800", "https://picsum.photos/seed/prop1_3/1200/800"],
+    operation: "Alquiler"
   },
   {
     id: 2,
@@ -56,7 +57,8 @@ export const properties: Property[] = [
     available: "Inmediato",
     features: ["1 Dormitorio", "Cocina separada", "Living-comedor", "Balcón"],
     imageUrl: "https://picsum.photos/seed/prop2/800/600",
-    images: ["https://picsum.photos/seed/prop2/1200/800", "https://picsum.photos/seed/prop2_2/1200/800", "https://picsum.photos/seed/prop2_3/1200/800"]
+    images: ["https://picsum.photos/seed/prop2/1200/800", "https://picsum.photos/seed/prop2_2/1200/800", "https://picsum.photos/seed/prop2_3/1200/800"],
+    operation: "Alquiler"
   },
   {
     id: 3,
@@ -79,7 +81,8 @@ export const properties: Property[] = [
       "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/544757829_1347851483862690_5224457815341958120_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEeETndHdR5ypYj0HR-DPcNvUmbldmQcva9SZuV2ZBy9qUSp1288ovAhiwkJKhGIXdzS0QABa9EES-omc7rTodl&_nc_ohc=AtV3OjO06i4Q7kNvwFP87xQ&_nc_oc=Adl8cBR85-nDciT4vF-7O81MODbIuc6WSagbMXvlx9sPnUjKNnkVXqTSaz9v3509Ih8&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=EWvZ5pQWQ4Z1rUzVZ_PxbQ&oh=00_AfZeCtCBEEKnN-bYi50rVSk_SVufoTmm0_EELBaTnNudUw&oe=68C268F4",
       "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/544884856_1347851467196025_1524804413660520058_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeE6Hl-ECsTo6wknsUuKjbgvyYuA5D0bG3vJi4DkPRsbe7sFXQwsvx0V0IyVyayHh6_A2Pnnm26PdCCEpKmGPsQI&_nc_ohc=zg12EcHpm38Q7kNvwFiNF5e&_nc_oc=AdlYqTN9zP9bw508jytBjQu7T0GuTOSn7L3YUgWMIV-QR0s5ouGK397IsnByOTZoVRk&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=ZB_kd94i2IHYmDSqDe6NYA&oh=00_AfYY9XzoqrkQqxCNee7cSk6De_4tcqH4KgdT1zQnAUYP9g&oe=68C28267",
       "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/542751895_1347851460529359_4009706418728767474_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHVeT3H3DydjqhFBZ1WjgFbugRafVKhkPe6BFp9UqGQ96aM0KFSFikEh_0nimPEl_UOtQMq2BDB0THajjyoMCcd&_nc_ohc=-IehQf_YJDwQ7kNvwHcSrQl&_nc_oc=AdmrJmLupgMIbx9QE5qwGXF8rdAbzuggVu12hg9nFEbKbB0oWa7dF9315bQuoHkWcs8&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=N3eqeaoJ_PUO8GVdgr2-mQ&oh=00_AfaiB58DE3mu4F3-UAXrrRE8Sp0C-GJPr4oxUHlDXXMlOQ&oe=68C27C11"
-    ]
+    ],
+    operation: "Alquiler"
   },
   {
     id: 4,
@@ -93,7 +96,8 @@ export const properties: Property[] = [
     available: "Inmediato",
     features: ["Totalmente amoblado", "1 Dormitorio", "Equipamiento completo", "Ubicación céntrica"],
     imageUrl: "https://picsum.photos/seed/prop4/800/600",
-     images: ["https://picsum.photos/seed/prop4/1200/800", "https://picsum.photos/seed/prop4_2/1200/800", "https://picsum.photos/seed/prop4_3/1200/800"]
+     images: ["https://picsum.photos/seed/prop4/1200/800", "https://picsum.photos/seed/prop4_2/1200/800", "https://picsum.photos/seed/prop4_3/1200/800"],
+     operation: "Alquiler"
   },
   {
     id: 5,
@@ -107,7 +111,8 @@ export const properties: Property[] = [
     available: "Inmediato",
     features: ["3 Dormitorios (1 en suite)", "Vistas panorámicas", "Acabados de lujo", "Seguridad 24hs"],
     imageUrl: "https://picsum.photos/seed/prop5/800/600",
-     images: ["https://picsum.photos/seed/prop5/1200/800", "https://picsum.photos/seed/prop5_2/1200/800", "https://picsum.photos/seed/prop5_3/1200/800"]
+     images: ["https://picsum.photos/seed/prop5/1200/800", "https://picsum.photos/seed/prop5_2/1200/800", "https://picsum.photos/seed/prop5_3/1200/800"],
+     operation: "Alquiler"
   },
   {
     id: 6,
@@ -130,7 +135,8 @@ export const properties: Property[] = [
       "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/536275113_1344959960818509_2725715572640271472_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFZ4DKUgcV0rQalyaUAT4wZvHJ5HVO2msq8cnkdU7aayrK-a_rCKBm74TJwnoX127FqWUnmSZtWsjACv8IwIWRi&_nc_ohc=PhNwOCSQVFwQ7kNvwFBXhIx&_nc_oc=AdlKmQSekZkxiPdRjbFQAKRGBfG7-W8Ms6vmp9mnb3337XYcwibkEpZHH2nK63TAhCI&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=kOnnvNQpES_zsUFe3o3vYg&oh=00_AfYlMXmWsHvOCmXMruio3yUhjMTFjo3fTuaCWnKp1fPtow&oe=68C28F36",
       "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/542401173_1344959970818508_7499106472812024878_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHHpRIOrFnUw3kks9H0FqBJq7uAu6KrIJ-ru4C7oqsgnyuCpUzsk9biyVETfp2QkQTLt0P47NKUkhO-Yj7ZpYpl&_nc_ohc=Si6yBmPiqtgQ7kNvwHF0dK8&_nc_oc=Adlq8sJeicg82jDoLew8HVgjGsyJ7HPfIal_eOaeLL-iGV58y6Fd22DCSD0TvViT5jc&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=STlClhi4MnG-qAf2gNdNhw&oh=00_AfYVC5kMIwkDMLSCP4xYmC_VYmTX-7AihL7JyYENShQRlw&oe=68C28223",
       "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/542693392_1344959997485172_7895993102785036459_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHzExVHh8GD-V6BTh6Aq7Vcx50YWtUasG3HnRha1RqwbTm9S-04vY5RtB3BDDtICf_BusRi5Y8B3qii-28v_ZlX&_nc_ohc=fEQNrdXCwnUQ7kNvwE5-ONU&_nc_oc=AdllWQ-Zwr-2sKTFHS_ilhKSlLQyXWHlRX8dWBhoWjmmAGLV6eXDiyRJzXgDFepGpPA&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=gE34PbbvHT_p8rqCItSeAg&oh=00_Afb6HQ0QEyyrFVQFBQjaoRIqF5VyJbssPX9hg9PS77NMIA&oe=68C26E34"
-    ]
+    ],
+    operation: "Alquiler"
   },
   {
     id: 7,
@@ -144,7 +150,8 @@ export const properties: Property[] = [
     available: "Inmediato",
     features: ["Excelente ubicación", "Gran vidriera", "Salón principal amplio", "Baño y depósito"],
     imageUrl: "https://picsum.photos/seed/prop7/800/600",
-     images: ["https://picsum.photos/seed/prop7/1200/800", "https://picsum.photos/seed/prop7_2/1200/800", "https://picsum.photos/seed/prop7_3/1200/800"]
+     images: ["https://picsum.photos/seed/prop7/1200/800", "https://picsum.photos/seed/prop7_2/1200/800", "https://picsum.photos/seed/prop7_3/1200/800"],
+     operation: "Alquiler"
   },
   {
     id: 8,
@@ -158,7 +165,8 @@ export const properties: Property[] = [
     available: "Septiembre",
     features: ["A estrenar", "2 Dormitorios", "Balcón", "Pisos de porcelanato"],
     imageUrl: "https://picsum.photos/seed/prop8/800/600",
-     images: ["https://picsum.photos/seed/prop8/1200/800", "https://picsum.photos/seed/prop8_2/1200/800", "https://picsum.photos/seed/prop8_3/1200/800"]
+     images: ["https://picsum.photos/seed/prop8/1200/800", "https://picsum.photos/seed/prop8_2/1200/800", "https://picsum.photos/seed/prop8_3/1200/800"],
+     operation: "Alquiler"
   },
   {
     id: 9,
@@ -172,7 +180,8 @@ export const properties: Property[] = [
     available: "Septiembre",
     features: ["Ubicación céntrica", "Balcón", "Cocina eléctrica", "Edificio moderno"],
     imageUrl: "https://picsum.photos/seed/prop9/800/600",
-     images: ["https://picsum.photos/seed/prop9/1200/800", "https://picsum.photos/seed/prop9_2/1200/800", "https://picsum.photos/seed/prop9_3/1200/800"]
+     images: ["https://picsum.photos/seed/prop9/1200/800", "https://picsum.photos/seed/prop9_2/1200/800", "https://picsum.photos/seed/prop9_3/1200/800"],
+     operation: "Alquiler"
   },
   {
     id: 10,
@@ -186,7 +195,8 @@ export const properties: Property[] = [
     available: "Septiembre",
     features: ["3 Dormitorios", "Pileta y jardín", "Quincho con parrilla", "Seguridad privada"],
     imageUrl: "https://picsum.photos/seed/prop10/800/600",
-     images: ["https://picsum.photos/seed/prop10/1200/800", "https://picsum.photos/seed/prop10_2/1200/800", "https://picsum.photos/seed/prop10_3/1200/800"]
+     images: ["https://picsum.photos/seed/prop10/1200/800", "https://picsum.photos/seed/prop10_2/1200/800", "https://picsum.photos/seed/prop10_3/1200/800"],
+     operation: "Alquiler"
   },
   {
     id: 11,
@@ -212,7 +222,8 @@ export const properties: Property[] = [
       "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/540486391_1343405614307277_1733242696024067429_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEXrYWxVtdr6-1HWgZxb9iSScKBcXfMdZZJwoFxd8x1lnPKzXky5pJYlYFVX1FV5q1oKaLVCirAWKasYdNMq4yL&_nc_ohc=TH_Qj_IBvLQQ7kNvwFE7_Gl&_nc_oc=AdlcSr9hBqgmjl6EjtbVXpTNeFjTzew1OTJF_Lcydk5rjIC1urfyxfdZsRR3H6gdMuo&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=sy-pgdtHf9_WeTkwpONK8A&oh=00_AfYks1tLIVLL-PtR7H4fnbqJCQa3qi4mgPnsrjBfyMEdaA&oe=68C27A26",
       "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/541313972_1343405580973947_4265822147427891299_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEeTu-dUohbaQXGFB626t23NE0hwrzXfMc0TSHCvNd8x-X6IllKZhloCu-szt6AHOwPEd3mGWp-lGRdwQ8FS3fh&_nc_ohc=KDQbHHm6CR0Q7kNvwExDFvW&_nc_oc=AdkjmVPK5geR-zrjeRioZqFGNlxQGAvASLZvZjAreYDIv2RIV8vhxXu5BCTSz-L0RfI&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=RHGyKZVIPWbAgLNFGwC8Fw&oh=00_AfZxvO5JQ8x6iczE9zs-Rd_DbvPVneSWCpCcBXx5rSRXAw&oe=68C292E6",
       "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/540707532_1343405590973946_8759275852858257174_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFUWPCr8dn4KunDhoXohad1buXVRcrZOdJu5dVFytk50tP2cR1D6o80kZ8NJCr5s_vvdeqf8k7lqJxNbEF_c0qx&_nc_ohc=H8IAuf4FCqMQ7kNvwGO0A74&_nc_oc=AdnmR3kJeMbooCQoeDd6unLcysog0WUUGGnj9fFfOmIOxxtu0a7b6JHO8NQHnUlI650&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=I-UVa2-NU4jAaVdvduvgCg&oh=00_AfbbPyfjE1UgEHJN8s7vHyGPKsyU9q9apjcq0ARqJCtcwA&oe=68C28AE9"
-    ]
+    ],
+    operation: "Alquiler"
   },
   {
     id: 12,
@@ -234,6 +245,127 @@ export const properties: Property[] = [
       "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/536281561_1339019631412542_7501453953136610356_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGgnsaash1NsOWFkgjldpmIEmHLkLRSD00SYcuQtFIPTZyne482JvAHzn45fF-5-tJXpQnXq1pUFttcySJTUckb&_nc_ohc=vGO1e3p8364Q7kNvwGR3VpP&_nc_oc=Adl5Kk22q0mRe9arJ1EtGHOYAlzDoqaMo0P4hLHsab1MLt4Blv6q1DjvmTVDamw1f4s&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=cOV0tp5BrQvLiPe2QfBTrw&oh=00_AfZVoCaNHFSwgbsIgdZX8HVybw4XNKaiP3VQX8F7E7W0Hg&oe=68C28895",
       "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/539420619_1339019638079208_5002939396322820644_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGFWB9v74KjxuhFCNnkEHKU-6BYX45smgP7oFhfjmyaA4Q6zz8Pc4BeG3o9DWntkG9ueV_uGFo5jIlfRUd-r2Gm&_nc_ohc=nVb98QsARNcQ7kNvwFWpUCP&_nc_oc=Adk3ZOBh0mHVMcTDfyhOoRCR0D6BcoeUCSgxeAXDjhg-NOTATyPelInUnYBBKQnuI0w&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=f6UCI0PhaZVBb38oNiZCFw&oh=00_AfZLBLdEdzE1jIdbpF12fhggs7bntojLXFzdxOOeE3AJfg&oe=68C26A6F",
       "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/539207621_1339019524745886_503918382855257426_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeF0qU59MeXKPdVqs5YGjBkcIptwMRw-NJ8im3AxHD40n6kG8w3A3oalIGYNxkSMzuqSZPEFiGUTCskApDTiTJtB&_nc_ohc=5tW-AkDyO18Q7kNvwGqTfhG&_nc_oc=Adkbe98ynopAxrtok-obD9QEbrnGTI7B_bcDSXNub-2Yf8MWhZ2x0HBTWLVziZ1W3_s&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=l4hFrXpgfrkyyCbB-eQUdA&oh=00_AfapYp7Rrf7HMK_MD70HhhqNqBhmmGM0iHMW4dJU1rWRww&oe=68C27D9B"
-    ]
+    ],
+    operation: "Alquiler"
+  },
+  // Propiedades para VENTA
+  {
+    id: 13,
+    title: "Lote en Gavazza",
+    address: "Gavazza - Lote disponible",
+    type: "Lote",
+    rooms: 0,
+    price: 450000,
+    additionalCosts: "Escritura",
+    description: "Excelente lote en zona de Gavazza, ideal para construcción de vivienda familiar. Servicios disponibles en la zona.",
+    available: "Inmediato",
+    features: ["Servicios disponibles", "Zona residencial", "Fácil acceso", "Ideal para construcción"],
+    imageUrl: "https://picsum.photos/seed/lote-gavazza/800/600",
+    images: [
+      "https://picsum.photos/seed/lote-gavazza/1200/800",
+      "https://picsum.photos/seed/lote-gavazza-2/1200/800",
+      "https://picsum.photos/seed/lote-gavazza-3/1200/800"
+    ],
+    operation: "Venta"
+  },
+  {
+    id: 14,
+    title: "Complejo de Departamentos - Perón y Castex",
+    address: "Perón 2205 (esquina Castex)",
+    type: "Departamento",
+    rooms: 2,
+    price: 850000,
+    additionalCosts: "Escritura y gastos",
+    description: "Moderno complejo de departamentos en construcción. Departamentos de 2 dormitorios con excelente ubicación céntrica. Entrega estimada en 12 meses.",
+    available: "En construcción",
+    features: ["2 Dormitorios", "Cocina-comedor", "Balcón", "Cochera", "Ascensor", "Seguridad 24hs"],
+    imageUrl: "https://picsum.photos/seed/complejo-peron/800/600",
+    images: [
+      "https://picsum.photos/seed/complejo-peron/1200/800",
+      "https://picsum.photos/seed/complejo-peron-2/1200/800",
+      "https://picsum.photos/seed/complejo-peron-3/1200/800",
+      "https://picsum.photos/seed/complejo-peron-4/1200/800"
+    ],
+    operation: "Venta"
+  },
+  {
+    id: 15,
+    title: "Casa en Saluzzi",
+    address: "Saluzzi - Zona residencial",
+    type: "Casa",
+    rooms: 3,
+    price: 1200000,
+    additionalCosts: "Escritura y gastos",
+    description: "Hermosa casa familiar en zona residencial de Saluzzi. 3 dormitorios, living amplio, cocina separada, patio con parrilla y garage para 2 autos.",
+    available: "Inmediato",
+    features: ["3 Dormitorios", "Living-comedor", "Cocina separada", "Patio con parrilla", "Garage doble", "Zona residencial"],
+    imageUrl: "https://picsum.photos/seed/casa-saluzzi/800/600",
+    images: [
+      "https://picsum.photos/seed/casa-saluzzi/1200/800",
+      "https://picsum.photos/seed/casa-saluzzi-2/1200/800",
+      "https://picsum.photos/seed/casa-saluzzi-3/1200/800",
+      "https://picsum.photos/seed/casa-saluzzi-4/1200/800",
+      "https://picsum.photos/seed/casa-saluzzi-5/1200/800"
+    ],
+    operation: "Venta"
+  },
+  {
+    id: 16,
+    title: "Lote en Barrio CEC - Pestalozzi",
+    address: "Pestalozzi - Barrio CEC",
+    type: "Lote",
+    rooms: 0,
+    price: 380000,
+    additionalCosts: "Escritura",
+    description: "Lote en el exclusivo Barrio CEC, zona de gran crecimiento y valorización. Servicios completos, seguridad privada y excelente ubicación.",
+    available: "Inmediato",
+    features: ["Barrio privado", "Seguridad 24hs", "Servicios completos", "Zona en crecimiento", "Excelente ubicación"],
+    imageUrl: "https://picsum.photos/seed/lote-cec/800/600",
+    images: [
+      "https://picsum.photos/seed/lote-cec/1200/800",
+      "https://picsum.photos/seed/lote-cec-2/1200/800",
+      "https://picsum.photos/seed/lote-cec-3/1200/800"
+    ],
+    operation: "Venta"
+  },
+  {
+    id: 17,
+    title: "Galpón Industrial - San Roque",
+    address: "San Roque - Zona industrial",
+    type: "Galpón",
+    rooms: 0,
+    price: 1800000,
+    additionalCosts: "Escritura y gastos",
+    description: "Amplio galpón industrial en zona estratégica de San Roque. Ideal para depósito, taller o producción. Acceso para camiones, oficinas administrativas y baños.",
+    available: "Inmediato",
+    features: ["Amplio espacio", "Acceso para camiones", "Oficinas administrativas", "Baños", "Zona industrial", "Alto tránsito"],
+    imageUrl: "https://picsum.photos/seed/galpon-san-roque/800/600",
+    images: [
+      "https://picsum.photos/seed/galpon-san-roque/1200/800",
+      "https://picsum.photos/seed/galpon-san-roque-2/1200/800",
+      "https://picsum.photos/seed/galpon-san-roque-3/1200/800",
+      "https://picsum.photos/seed/galpon-san-roque-4/1200/800"
+    ],
+    operation: "Venta"
+  },
+  {
+    id: 18,
+    title: "Galpón/Local en Circunvalación",
+    address: "Circunvalación - Zona comercial",
+    type: "Galpón",
+    rooms: 0,
+    price: 2200000,
+    additionalCosts: "Escritura y gastos",
+    description: "Estructura comercial en zona de alta circulación de Circunvalación. Puede terminarse como galpón industrial o local comercial. Excelente ubicación para negocios.",
+    available: "A terminar",
+    features: ["Zona comercial", "Alta circulación", "Versátil uso", "Estructura base", "Fácil acceso", "Potencial comercial"],
+    imageUrl: "https://picsum.photos/seed/circunvalacion/800/600",
+    images: [
+      "https://picsum.photos/seed/circunvalacion/1200/800",
+      "https://picsum.photos/seed/circunvalacion-2/1200/800",
+      "https://picsum.photos/seed/circunvalacion-3/1200/800",
+      "https://picsum.photos/seed/circunvalacion-4/1200/800"
+    ],
+    operation: "Venta"
   }
 ];

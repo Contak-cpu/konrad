@@ -31,6 +31,7 @@ const FilterBar: React.FC<FilterBarProps> = ({ filters, setFilters }) => {
       rooms: 'Todos',
       availability: 'Todos',
       priceRange: 'all',
+      operation: 'Todos',
     });
   };
 
@@ -38,9 +39,9 @@ const FilterBar: React.FC<FilterBarProps> = ({ filters, setFilters }) => {
 
   return (
     <div className="bg-white/95 backdrop-blur-sm p-3 sm:p-4 rounded-xl shadow-lg border border-gray-200/50">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 sm:gap-4 items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-14 gap-3 sm:gap-4 items-center">
         
-        <div className="relative sm:col-span-2 lg:col-span-12">
+        <div className="relative sm:col-span-2 lg:col-span-14">
             <input
                 type="text"
                 name="searchTerm"
@@ -53,18 +54,29 @@ const FilterBar: React.FC<FilterBarProps> = ({ filters, setFilters }) => {
             <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-gray-500" />
         </div>
 
-        <div className="relative lg:col-span-3">
+        <div className="relative lg:col-span-2">
+          <select name="operation" value={filters.operation} onChange={handleInputChange} className={selectClasses} aria-label="Filtrar por operación">
+            <option value="Todos">Operación: Todas</option>
+            <option value="Alquiler">Alquiler</option>
+            <option value="Venta">Venta</option>
+          </select>
+          <ChevronDownIcon className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-500 pointer-events-none" />
+        </div>
+
+        <div className="relative lg:col-span-2">
           <select name="type" value={filters.type} onChange={handleInputChange} className={selectClasses} aria-label="Filtrar por tipo">
             <option value="Todos">Tipo: Todos</option>
             <option>Monoambiente</option>
             <option>Departamento</option>
             <option>Casa</option>
             <option>Local comercial</option>
+            <option>Lote</option>
+            <option>Galpón</option>
           </select>
           <ChevronDownIcon className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-500 pointer-events-none" />
         </div>
         
-        <div className="relative lg:col-span-3">
+        <div className="relative lg:col-span-2">
           <select name="priceRange" value={filters.priceRange} onChange={handleInputChange} className={selectClasses} aria-label="Filtrar por precio">
             {PRICE_RANGES.map(range => (
               <option key={range.value} value={range.value}>{range.label}</option>
@@ -89,6 +101,8 @@ const FilterBar: React.FC<FilterBarProps> = ({ filters, setFilters }) => {
             <option value="Todos">Disponibilidad: Todas</option>
             <option>Inmediato</option>
             <option>Septiembre</option>
+            <option>En construcción</option>
+            <option>A terminar</option>
           </select>
           <ChevronDownIcon className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-500 pointer-events-none" />
         </div>

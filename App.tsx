@@ -1,16 +1,18 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import PropertyGrid from './components/PropertyGrid';
 import PropertyDetail from './components/PropertyDetail';
 import RequirementsSection from './components/RequirementsSection';
 import ContactSection from './components/ContactSection';
+import SalesSection from './components/SalesSection';
 import Footer from './components/Footer';
 import { properties as allProperties } from './constants';
 import type { Property, Filters, SortOption } from './types';
 
 // This defines the possible main views of the application.
-type View = 'home' | 'requisitos' | 'contacto';
+type View = 'home' | 'requisitos' | 'contacto' | 'ventas';
 
 // Levenshtein distance function for fuzzy matching.
 // A lower number means the strings are more similar.
@@ -40,9 +42,8 @@ const levenshteinDistance = (a: string, b: string): number => {
   return matrix[b.length][a.length];
 };
 
-const App: React.FC = () => {
-  // State for the current main view (e.g., home, requirements).
-  const [view, setView] = useState<View>('home');
+// Home component with property listing
+const HomePage: React.FC = () => {
   // State to hold the property selected for detailed view. Null means no property is selected.
   const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
   // State for property filters, initialized to show all properties.
@@ -52,6 +53,7 @@ const App: React.FC = () => {
     rooms: 'Todos',
     availability: 'Todos',
     priceRange: 'all',
+    operation: 'Todos',
   });
   // State for sorting properties.
   const [sort, setSort] = useState<SortOption>('default');
@@ -84,7 +86,6 @@ const App: React.FC = () => {
           );
       })();
 
-
       // Property type filter
       const typeMatch = filters.type === 'Todos' || property.type === filters.type;
 
@@ -106,7 +107,10 @@ const App: React.FC = () => {
           return property.price >= min && property.price <= max;
       })();
 
-      return searchTermMatch && typeMatch && roomsMatch && availabilityMatch && priceRangeMatch;
+      // Operation filter (Alquiler/Venta)
+      const operationMatch = filters.operation === 'Todos' || property.operation === filters.operation;
+
+      return searchTermMatch && typeMatch && roomsMatch && availabilityMatch && priceRangeMatch && operationMatch;
     });
     
     // Apply sorting to the filtered list
@@ -118,11 +122,6 @@ const App: React.FC = () => {
 
     return filtered;
   }, [filters, sort]);
-
-  // Effect to scroll to the top of the page when view or selected property changes for better UX.
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [selectedProperty, view]);
 
   // Handler to set the selected property and switch to detail view.
   const handleSelectProperty = (property: Property) => {
@@ -139,24 +138,58 @@ const App: React.FC = () => {
     return <PropertyDetail property={selectedProperty} onBack={handleBackToListing} />;
   }
 
-  // Otherwise, render the main application layout.
+  return (
+    <>
+      <Hero filters={filters} setFilters={setFilters} />
+      <PropertyGrid 
+        properties={filteredProperties} 
+        onSelectProperty={handleSelectProperty} 
+        sort={sort}
+        setSort={setSort}
+      />
+    </>
+  );
+};
+
+const App: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Get current view from URL
+  const getCurrentView = (): View => {
+    const path = location.pathname;
+    if (path === '/requisitos') return 'requisitos';
+    if (path === '/contacto') return 'contacto';
+    if (path === '/ventas') return 'ventas';
+    return 'home';
+  };
+
+  const currentView = getCurrentView();
+
+  // Handler to change view and navigate
+  const handleViewChange = (view: View) => {
+    if (view === 'home') {
+      navigate('/');
+    } else {
+      navigate(`/${view}`);
+    }
+  };
+
+  // Effect to scroll to the top of the page when route changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
-      <Header onViewChange={setView} currentView={view} />
+      <Header onViewChange={handleViewChange} currentView={currentView} />
       <main className="flex-grow">
-        {view === 'home' && (
-          <>
-            <Hero filters={filters} setFilters={setFilters} />
-            <PropertyGrid 
-              properties={filteredProperties} 
-              onSelectProperty={handleSelectProperty} 
-              sort={sort}
-              setSort={setSort}
-            />
-          </>
-        )}
-        {view === 'requisitos' && <RequirementsSection />}
-        {view === 'contacto' && <ContactSection />}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/requisitos" element={<RequirementsSection />} />
+          <Route path="/contacto" element={<ContactSection />} />
+          <Route path="/ventas" element={<SalesSection />} />
+        </Routes>
       </main>
       <Footer />
     </div>

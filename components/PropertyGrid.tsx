@@ -1,20 +1,63 @@
 import React from 'react';
 import PropertyCard from './PropertyCard';
-import type { Property, SortOption } from '../types';
+import type { Property, SortOption, Filters } from '../types';
 
 interface PropertyGridProps {
   properties: Property[];
   onSelectProperty: (property: Property) => void;
   sort: SortOption;
   setSort: React.Dispatch<React.SetStateAction<SortOption>>;
+  filters: Filters;
+  setFilters: React.Dispatch<React.SetStateAction<Filters>>;
 }
 
-const PropertyGrid: React.FC<PropertyGridProps> = ({ properties, onSelectProperty, sort, setSort }) => {
+const PropertyGrid: React.FC<PropertyGridProps> = ({ properties, onSelectProperty, sort, setSort, filters, setFilters }) => {
+  const handleOperationChange = (operation: string) => {
+    setFilters(prev => ({ ...prev, operation }));
+  };
+
   return (
     <div className="bg-gray-100 py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-8 gap-4">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center sm:text-left">Nuestras Propiedades</h2>
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center sm:text-left">Nuestras Propiedades</h2>
+              
+              {/* Botones de Operación */}
+              <div className="flex bg-white rounded-lg p-1 shadow-sm border border-gray-200">
+                <button
+                  onClick={() => handleOperationChange('Todos')}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    filters.operation === 'Todos'
+                      ? 'bg-primary-600 text-white shadow-sm'
+                      : 'text-gray-600 hover:text-primary-600 hover:bg-gray-50'
+                  }`}
+                >
+                  Todas
+                </button>
+                <button
+                  onClick={() => handleOperationChange('Alquiler')}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    filters.operation === 'Alquiler'
+                      ? 'bg-primary-600 text-white shadow-sm'
+                      : 'text-gray-600 hover:text-primary-600 hover:bg-gray-50'
+                  }`}
+                >
+                  Alquiler
+                </button>
+                <button
+                  onClick={() => handleOperationChange('Venta')}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    filters.operation === 'Venta'
+                      ? 'bg-primary-600 text-white shadow-sm'
+                      : 'text-gray-600 hover:text-primary-600 hover:bg-gray-50'
+                  }`}
+                >
+                  Venta
+                </button>
+              </div>
+            </div>
+            
             <div className="flex flex-col sm:flex-row items-center gap-2">
                 <label htmlFor="sort-by" className="text-gray-600 font-medium text-sm sm:text-base">Ordenar por:</label>
                 <select 

@@ -146,6 +146,8 @@ const HomePage: React.FC = () => {
         onSelectProperty={handleSelectProperty} 
         sort={sort}
         setSort={setSort}
+        filters={filters}
+        setFilters={setFilters}
       />
     </>
   );

@@ -42,23 +42,12 @@ export const properties: Property[] = [
     description: "Ambientes integrados de cocina-comedor y dormitorio, más baño. Ideal para una persona o pareja.",
     available: "Inmediato",
     features: ["Cocina integrada", "Baño completo", "Ambiente único", "Luminoso"],
-    imageUrl: "https://picsum.photos/seed/prop1/800/600",
-    images: ["https://picsum.photos/seed/prop1/1200/800", "https://picsum.photos/seed/prop1_2/1200/800", "https://picsum.photos/seed/prop1_3/1200/800"],
-    operation: "Alquiler"
-  },
-  {
-    id: 2,
-    title: "Departamento 1 Dormitorio en Beruti",
-    address: "Beruti 361",
-    type: "Departamento",
-    rooms: 1,
-    price: 320000,
-    additionalCosts: 25000,
-    description: "Cómodo departamento de un dormitorio con cocina separada y living comedor.",
-    available: "Inmediato",
-    features: ["1 Dormitorio", "Cocina separada", "Living-comedor", "Balcón"],
-    imageUrl: "https://picsum.photos/seed/prop2/800/600",
-    images: ["https://picsum.photos/seed/prop2/1200/800", "https://picsum.photos/seed/prop2_2/1200/800", "https://picsum.photos/seed/prop2_3/1200/800"],
+    imageUrl: "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/544374670_1347851490529356_1324560712302344304_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEA1PxXYKPWlXHDNegg754glBJzxoBTtY-UEnPGgFO1j7qZJGUUh5UAv257rHquRLVHv7FX-BMql3_Mn9LKF17_&_nc_ohc=OLEYq_LLR5MQ7kNvwHUZSWv&_nc_oc=AdkvB9usobMoIG6r-A-diVmaLMthBi7-MMEwOSEk9gQuwMFUMyXR1V-YfHPOem2jEwI&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=rIEMOrBZWrJy3pGeNWVqiw&oh=00_AfadvidrH6rR0Q2OE_Nqo9ZPxNpB3BtDLXP2_DoVl9quWg&oe=68C2629F",
+    images: [
+      "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/544374670_1347851490529356_1324560712302344304_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEA1PxXYKPWlXHDNegg754glBJzxoBTtY-UEnPGgFO1j7qZJGUUh5UAv257rHquRLVHv7FX-BMql3_Mn9LKF17_&_nc_ohc=OLEYq_LLR5MQ7kNvwHUZSWv&_nc_oc=AdkvB9usobMoIG6r-A-diVmaLMthBi7-MMEwOSEk9gQuwMFUMyXR1V-YfHPOem2jEwI&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=rIEMOrBZWrJy3pGeNWVqiw&oh=00_AfadvidrH6rR0Q2OE_Nqo9ZPxNpB3BtDLXP2_DoVl9quWg&oe=68C2629F",
+      "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/542760872_1347851447196027_5490288474808132789_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEUJ0H-KDW8nL5NRMNWZ8AadJLx-O5ZLqJ0kvH47lkuosyq7jxNEQOGGtDDRxgceMLq48CtR92xzRlq_eNKpngj&_nc_ohc=bRpJlzDMFLgQ7kNvwFaNgDR&_nc_oc=Adlo3LgzILikTXymsfyvUscz_LbReFviEKug6LpYkGA9RRC3czDhGu49Q0ieVJUuXOU&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=IwIxhloPgUBh_q0zCDJyPA&oh=00_AfYnoWr-HsC-ewtxdserKWJYbYBYipeOd2FDCoa8Yr3Wgw&oe=68C263C1",
+      "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/542751948_1347851463862692_6810441729937486457_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHvDA2N8_EXwOAXgDYC7d2DDlClDlPChR0OUKUOU8KFHYI3P7mJEORNgvK6G_a7wrKMQP-UaFZ9CqjqhEq-EilY&_nc_ohc=5jpxVrAXtoEQ7kNvwGXVOoF&_nc_oc=AdkgOiKKgQ4-4q9eifBH7ZR9WlWf9ykKWQY_2P2ll0zdspYLjO9mjJRQwEU4x2lG-Y4&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=IwIxhloPgUBh_q0zCDJyPA&oh=00_AfZtLzXZ-dtMkS3iuwVXThnaCowwF37uEVdv95k-vSjrew&oe=68C27634"
+    ],
     operation: "Alquiler"
   },
   {
@@ -96,14 +85,18 @@ export const properties: Property[] = [
     description: "Departamento de 1 dormitorio totalmente amoblado y equipado. Listo para mudarse. Excelente ubicación.",
     available: "Inmediato",
     features: ["Totalmente amoblado", "1 Dormitorio", "Equipamiento completo", "Ubicación céntrica"],
-    imageUrl: "https://picsum.photos/seed/prop4/800/600",
-     images: ["https://picsum.photos/seed/prop4/1200/800", "https://picsum.photos/seed/prop4_2/1200/800", "https://picsum.photos/seed/prop4_3/1200/800"],
-     operation: "Alquiler"
+    imageUrl: "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/540791418_1344964010818104_5654399181896132944_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeG0YHEWQUnK3c_j8bDt2J-RTgKI7CpDDZJOAojsKkMNkn2udneLwh59T7uM1ErLygZtdDJXkYrS26AoVCkgUgXR&_nc_ohc=XwLnX49YtcAQ7kNvwFu86yg&_nc_oc=AdlaJ6YqIvyYmCUAdRw_m_v4Oumgp4--jVWqoqYcHYzgiHbiuf0azyAGpL60IboHzV8&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=QNuwE7uz3r28ezEw98fQNQ&oh=00_Afae9k3jlfmP6vvJcUfO4xvqSEwunZYR0nOE_fiDg9ktmQ&oe=68C28B9D",
+    images: [
+      "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/540791418_1344964010818104_5654399181896132944_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeG0YHEWQUnK3c_j8bDt2J-RTgKI7CpDDZJOAojsKkMNkn2udneLwh59T7uM1ErLygZtdDJXkYrS26AoVCkgUgXR&_nc_ohc=XwLnX49YtcAQ7kNvwFu86yg&_nc_oc=AdlaJ6YqIvyYmCUAdRw_m_v4Oumgp4--jVWqoqYcHYzgiHbiuf0azyAGpL60IboHzV8&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=QNuwE7uz3r28ezEw98fQNQ&oh=00_Afae9k3jlfmP6vvJcUfO4xvqSEwunZYR0nOE_fiDg9ktmQ&oe=68C28B9D",
+      "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/542033234_1344960010818504_8833407585601056846_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFNIvtnF1NB8YOHiWaAlgvKNTH7-Ibz4Ig1Mfv4hvPgiFkq7HmJWKYgHW5-8KbTM6Z-xg79EgRGsnYYe6_0tqSF&_nc_ohc=DZzLXG8DuJsQ7kNvwHQQlpi&_nc_oc=AdlqX2KFUEH6lozMVTI0A8hvO-InPUhJ4LDdn-jp00IrO-01easMXIFOj8GDd04Y4So&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=1A1jLUWDVmJ_Bj6WioLT_g&oh=00_AfY1FlwnIqPEYNRd9iMHB70D84z3DwrMCZ5ueBlkQVwfwA&oe=68C28607",
+      "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/542758962_1344960007485171_3546193982049918342_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEir8nr4X-IWsPhCjk3gz_4uNzGSGkbW7W43MZIaRtbtRSMd5Jp1bT_2n2lQppD9a1R1IdQ1fjhVt62m58gS0Rj&_nc_ohc=xbDKf0GlJHIQ7kNvwF9EbNI&_nc_oc=AdkZ1iocYCz-_UY5u56Ar6yFIeoK4iFstieglYUrpdWv8oXaPoPXCUxqIycJJ_M8oc8&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=cZ1JDGBPX4Ue9gM6nXRsug&oh=00_AfaiMnETILscuEPLKT2RLg_PgzIKdTDNWTL34p6wFJFrUA&oe=68C27922"
+    ],
+    operation: "Alquiler"
   },
   {
     id: 5,
     title: "Piso de categoría en Hilario Lagos",
-    address: "Hilario Lagos 356",
+    address: "Hilario Lagos 365",
     type: "Departamento",
     rooms: 3,
     price: 650000,
@@ -111,9 +104,13 @@ export const properties: Property[] = [
     description: "Exclusivo piso de 3 dormitorios con acabados de lujo, amplios ventanales y vistas panorámicas.",
     available: "Inmediato",
     features: ["3 Dormitorios (1 en suite)", "Vistas panorámicas", "Acabados de lujo", "Seguridad 24hs"],
-    imageUrl: "https://picsum.photos/seed/prop5/800/600",
-     images: ["https://picsum.photos/seed/prop5/1200/800", "https://picsum.photos/seed/prop5_2/1200/800", "https://picsum.photos/seed/prop5_3/1200/800"],
-     operation: "Alquiler"
+    imageUrl: "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/540441985_1343405600973945_7707959579154835210_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGSJBOYi429roKXqQ55zPphkJrRX5bmH4KQmtFfluYfgjMtlSAl6NliUeO2NTU2irVHDr2eIAsby8hk1qSJxOog&_nc_ohc=KALz53R3_7IQ7kNvwGVVPqa&_nc_oc=AdmAL6yPY4euhQelkyZNDPoQlK8RWWtDJ2lYqEkXQJjpAWfyyZxU4vtH6uZytV6WbL4&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=ySEmnHbxxEKOD3faa_3PuA&oh=00_AfaUaZB2O82uOQysfmnXicnVDxX-bhwDL6-4PRblJF66Dw&oe=68C27249",
+    images: [
+      "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/540441985_1343405600973945_7707959579154835210_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGSJBOYi429roKXqQ55zPphkJrRX5bmH4KQmtFfluYfgjMtlSAl6NliUeO2NTU2irVHDr2eIAsby8hk1qSJxOog&_nc_ohc=KALz53R3_7IQ7kNvwGVVPqa&_nc_oc=AdmAL6yPY4euhQelkyZNDPoQlK8RWWtDJ2lYqEkXQJjpAWfyyZxU4vtH6uZytV6WbL4&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=ySEmnHbxxEKOD3faa_3PuA&oh=00_AfaUaZB2O82uOQysfmnXicnVDxX-bhwDL6-4PRblJF66Dw&oe=68C27249",
+      "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/541769508_1343405767640595_2352791370626336030_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFibVXKPmQp_06002G5OMZQv6C4IeAvN0q_oLgh4C83Sg2S0vrJk8u9reXgxtCkXRmvzl3IOimn7ax3neZ8b1nA&_nc_ohc=qmGKPaA5uIoQ7kNvwE3WG-X&_nc_oc=AdmFTI3dOg9C21a88hDE9vm8vbfAdlwo2a1ylpqIB22mq0_AOZjtlXFe29KBwY57CD4&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=IMcV-bA3ZFH4gryOaav7Vg&oh=00_AfZNS40zwfK2b_ni2_ka8M9GLwEMlFhGo7J-hFMgQiOhKA&oe=68C263A7",
+      "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/542742142_1343405674307271_6174627315937861995_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFR2ks9BOV1oF1-L8bHvOuf5oZEdPyoo-PmhkR0_Kij49dUYg5LbuMITY7t3Iz3Acki43jDUHuQl7mFyRpq8Ij8&_nc_ohc=GRplsyrQW1IQ7kNvwH0hlgm&_nc_oc=AdkkAnlR0z2VWleooFi0qmq5_8QXwt0sGoRRI7xzK9vEB1PJGXO9rbrL7GMxzIELl1A&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=N_kCmzmNOc02GzP5xwHu5A&oh=00_Afa2y3R3mZ13MytF1jBzutjM_tWyPXOfKJbKZo-6QmxiZg&oe=68C272F3"
+    ],
+    operation: "Alquiler"
   },
   {
     id: 6,
@@ -140,67 +137,7 @@ export const properties: Property[] = [
     operation: "Alquiler"
   },
   {
-    id: 7,
-    title: "Local Comercial en Hugo del Carril",
-    address: "Hugo del Carril 1234",
-    type: "Local comercial",
-    rooms: 0,
-    price: 500000,
-    additionalCosts: "IVA",
-    description: "Amplio local comercial a la calle con gran vidriera. Alto tránsito peatonal y vehicular.",
-    available: "Inmediato",
-    features: ["Excelente ubicación", "Gran vidriera", "Salón principal amplio", "Baño y depósito"],
-    imageUrl: "https://picsum.photos/seed/prop7/800/600",
-     images: ["https://picsum.photos/seed/prop7/1200/800", "https://picsum.photos/seed/prop7_2/1200/800", "https://picsum.photos/seed/prop7_3/1200/800"],
-     operation: "Alquiler"
-  },
-  {
-    id: 8,
-    title: "Departamento 2 Dormitorios a estrenar",
-    address: "Av. Luro 1550",
-    type: "Departamento",
-    rooms: 2,
-    price: 480000,
-    additionalCosts: 40000,
-    description: "Moderno departamento a estrenar con balcón. Excelentes terminaciones y luminosidad.",
-    available: "Septiembre",
-    features: ["A estrenar", "2 Dormitorios", "Balcón", "Pisos de porcelanato"],
-    imageUrl: "https://picsum.photos/seed/prop8/800/600",
-     images: ["https://picsum.photos/seed/prop8/1200/800", "https://picsum.photos/seed/prop8_2/1200/800", "https://picsum.photos/seed/prop8_3/1200/800"],
-     operation: "Alquiler"
-  },
-  {
-    id: 9,
-    title: "Moderno Monoambiente céntrico",
-    address: "Corrientes 720",
-    type: "Monoambiente",
-    rooms: 0,
-    price: 350000,
-    additionalCosts: 28000,
-    description: "Funcional monoambiente en el corazón de la ciudad, con cocina integrada y balcón.",
-    available: "Septiembre",
-    features: ["Ubicación céntrica", "Balcón", "Cocina eléctrica", "Edificio moderno"],
-    imageUrl: "https://picsum.photos/seed/prop9/800/600",
-     images: ["https://picsum.photos/seed/prop9/1200/800", "https://picsum.photos/seed/prop9_2/1200/800", "https://picsum.photos/seed/prop9_3/1200/800"],
-     operation: "Alquiler"
-  },
-  {
-    id: 10,
-    title: "Casa con pileta en Barrio Privado",
-    address: "Barrio Los Pinos Lote 42",
-    type: "Casa",
-    rooms: 3,
-    price: 950000,
-    additionalCosts: 120000,
-    description: "Impresionante casa de 3 dormitorios con pileta, quincho y gran jardín en barrio privado con seguridad.",
-    available: "Septiembre",
-    features: ["3 Dormitorios", "Pileta y jardín", "Quincho con parrilla", "Seguridad privada"],
-    imageUrl: "https://picsum.photos/seed/prop10/800/600",
-     images: ["https://picsum.photos/seed/prop10/1200/800", "https://picsum.photos/seed/prop10_2/1200/800", "https://picsum.photos/seed/prop10_3/1200/800"],
-     operation: "Alquiler"
-  },
-  {
-    id: 11,
+    id: 6,
     title: "Casa Quinta a estrenar en Saluzzi",
     address: "D. Saluzzi 3750, entre Robustelli y Alamos de Primavera",
     type: "Casa",
@@ -227,7 +164,7 @@ export const properties: Property[] = [
     operation: "Alquiler"
   },
   {
-    id: 12,
+    id: 7,
     title: "Casa familiar en Giachino",
     address: "Giachino 2172",
     type: "Casa",
@@ -251,7 +188,7 @@ export const properties: Property[] = [
   },
   // Propiedades para VENTA
   {
-    id: 13,
+    id: 8,
     title: "Lote en Gavazza",
     address: "Gavazza - Lote disponible",
     type: "Lote",
@@ -267,10 +204,11 @@ export const properties: Property[] = [
       "https://picsum.photos/seed/lote-gavazza-2/1200/800",
       "https://picsum.photos/seed/lote-gavazza-3/1200/800"
     ],
-    operation: "Venta"
+    operation: "Venta",
+    hidden: true
   },
   {
-    id: 14,
+    id: 9,
     title: "Complejo de Departamentos - Perón y Castex",
     address: "Perón 2205 (esquina Castex)",
     type: "Departamento",
@@ -287,10 +225,11 @@ export const properties: Property[] = [
       "https://picsum.photos/seed/complejo-peron-3/1200/800",
       "https://picsum.photos/seed/complejo-peron-4/1200/800"
     ],
-    operation: "Venta"
+    operation: "Venta",
+    hidden: true
   },
   {
-    id: 15,
+    id: 10,
     title: "Casa en Saluzzi",
     address: "Saluzzi - Zona residencial",
     type: "Casa",
@@ -308,10 +247,11 @@ export const properties: Property[] = [
       "https://picsum.photos/seed/casa-saluzzi-4/1200/800",
       "https://picsum.photos/seed/casa-saluzzi-5/1200/800"
     ],
-    operation: "Venta"
+    operation: "Venta",
+    hidden: true
   },
   {
-    id: 16,
+    id: 11,
     title: "Lote en Barrio CEC - Pestalozzi",
     address: "Pestalozzi - Barrio CEC",
     type: "Lote",
@@ -327,10 +267,11 @@ export const properties: Property[] = [
       "https://picsum.photos/seed/lote-cec-2/1200/800",
       "https://picsum.photos/seed/lote-cec-3/1200/800"
     ],
-    operation: "Venta"
+    operation: "Venta",
+    hidden: true
   },
   {
-    id: 17,
+    id: 12,
     title: "Galpón Industrial - San Roque",
     address: "San Roque - Zona industrial",
     type: "Galpón",
@@ -347,10 +288,11 @@ export const properties: Property[] = [
       "https://picsum.photos/seed/galpon-san-roque-3/1200/800",
       "https://picsum.photos/seed/galpon-san-roque-4/1200/800"
     ],
-    operation: "Venta"
+    operation: "Venta",
+    hidden: true
   },
   {
-    id: 18,
+    id: 13,
     title: "Galpón/Local en Circunvalación",
     address: "Circunvalación - Zona comercial",
     type: "Galpón",
@@ -367,6 +309,7 @@ export const properties: Property[] = [
       "https://picsum.photos/seed/circunvalacion-3/1200/800",
       "https://picsum.photos/seed/circunvalacion-4/1200/800"
     ],
-    operation: "Venta"
+    operation: "Venta",
+    hidden: true
   }
 ];

@@ -14,6 +14,8 @@ export interface Property {
   images?: string[];
   // Add property operation type
   operation: 'Alquiler' | 'Venta';
+  // Add hidden property to hide properties without real photos
+  hidden?: boolean;
 }
 
 export interface Filters {

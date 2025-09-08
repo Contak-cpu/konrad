@@ -1,4 +1,5 @@
 import type { Property, FaqItem } from './types';
+import { FormPropSaluzzi, FormPropGiachino, FormPropFerrando, FormPropUrquiza } from './forms';
 
 export const WHATSAPP_NUMBER = '5492954475417';
 

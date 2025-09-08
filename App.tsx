@@ -61,6 +61,9 @@ const HomePage: React.FC = () => {
   // Memoized calculation to filter and sort properties whenever filters or sort order change.
   const filteredProperties = useMemo(() => {
     let filtered = allProperties.filter(property => {
+      // Filter to show only properties with real photos (not Picsum placeholders)
+      const hasRealPhotos = !property.imageUrl.includes('picsum.photos');
+      
       // Fuzzy Search Term filter (title or address)
       const searchTerm = filters.searchTerm.toLowerCase().trim();
       const searchTermMatch = (() => {
@@ -110,7 +113,7 @@ const HomePage: React.FC = () => {
       // Operation filter (Alquiler/Venta)
       const operationMatch = filters.operation === 'Todos' || property.operation === filters.operation;
 
-      return searchTermMatch && typeMatch && roomsMatch && availabilityMatch && priceRangeMatch && operationMatch;
+      return hasRealPhotos && searchTermMatch && typeMatch && roomsMatch && availabilityMatch && priceRangeMatch && operationMatch;
     });
     
     // Apply sorting to the filtered list

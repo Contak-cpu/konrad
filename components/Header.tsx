@@ -14,7 +14,7 @@ const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-type View = 'home' | 'requisitos' | 'contacto' | 'ventas';
+type View = 'home' | 'requisitos' | 'contacto' | 'ventas' | 'registrar-propiedad';
 
 interface HeaderProps {
     onViewChange: (view: View) => void;
@@ -84,6 +84,12 @@ const Header: React.FC<HeaderProps> = ({ onViewChange, currentView }) => {
             ))}
           </nav>
           <div className="hidden md:flex items-center space-x-4">
+            <button
+              onClick={() => onViewChange('registrar-propiedad')}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
+            >
+              Registrar Propiedad
+            </button>
             <a 
               href={whatsAppUrl} 
               target="_blank" 
@@ -108,7 +114,13 @@ const Header: React.FC<HeaderProps> = ({ onViewChange, currentView }) => {
                 {link.label}
               </NavLink>
             ))}
-            <div className="px-3 py-2 mt-4 border-t">
+            <div className="px-3 py-2 mt-4 border-t space-y-2">
+              <button
+                onClick={() => { onViewChange('registrar-propiedad'); setIsMenuOpen(false); }}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
+              >
+                Registrar Propiedad
+              </button>
               <a 
                 href={whatsAppUrl} 
                 target="_blank" 

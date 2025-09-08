@@ -8,11 +8,12 @@ import RequirementsSection from './components/RequirementsSection';
 import ContactSection from './components/ContactSection';
 import SalesSection from './components/SalesSection';
 import Footer from './components/Footer';
+import { FormPropiedades } from './components/forms/propiedades';
 import { properties as allProperties } from './constants';
 import type { Property, Filters, SortOption } from './types';
 
 // This defines the possible main views of the application.
-type View = 'home' | 'requisitos' | 'contacto' | 'ventas';
+type View = 'home' | 'requisitos' | 'contacto' | 'ventas' | 'registrar-propiedad';
 
 // Levenshtein distance function for fuzzy matching.
 // A lower number means the strings are more similar.
@@ -166,6 +167,7 @@ const App: React.FC = () => {
     if (path === '/requisitos') return 'requisitos';
     if (path === '/contacto') return 'contacto';
     if (path === '/ventas') return 'ventas';
+    if (path === '/registrar-propiedad') return 'registrar-propiedad';
     return 'home';
   };
 
@@ -178,6 +180,19 @@ const App: React.FC = () => {
     } else {
       navigate(`/${view}`);
     }
+  };
+
+  // Handler for form completion
+  const handleFormComplete = (data: any) => {
+    console.log('Propiedad registrada:', data);
+    alert('¡Propiedad registrada exitosamente!');
+    navigate('/');
+  };
+
+  // Handler for form save
+  const handleFormSave = (data: any) => {
+    console.log('Borrador guardado:', data);
+    // Aquí podrías mostrar una notificación más sutil
   };
 
   // Effect to scroll to the top of the page when route changes
@@ -194,6 +209,15 @@ const App: React.FC = () => {
           <Route path="/requisitos" element={<RequirementsSection />} />
           <Route path="/contacto" element={<ContactSection />} />
           <Route path="/ventas" element={<SalesSection />} />
+          <Route 
+            path="/registrar-propiedad" 
+            element={
+              <FormPropiedades 
+                onComplete={handleFormComplete}
+                onSave={handleFormSave}
+              />
+            } 
+          />
         </Routes>
       </main>
       <Footer />

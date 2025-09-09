@@ -25,5 +25,5 @@ export const saluzzi: Property = {
     "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/541313972_1343405580973947_4265822147427891299_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEeTu-dUohbaQXGFB626t23NE0hwrzXfMc0TSHCvNd8x-X6IllKZhloCu-szt6AHOwPEd3mGWp-lGRdwQ8FS3fh&_nc_ohc=KDQbHHm6CR0Q7kNvwExDFvW&_nc_oc=AdkjmVPK5geR-zrjeRioZqFGNlxQGAvASLZvZjAreYDIv2RIV8vhxXu5BCTSz-L0RfI&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=RHGyKZVIPWbAgLNFGwC8Fw&oh=00_AfZxvO5JQ8x6iczE9zs-Rd_DbvPVneSWCpCcBXx5rSRXAw&oe=68C292E6",
     "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/540707532_1343405590973946_8759275852858257174_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFUWPCr8dn4KunDhoXohad1buXVRcrZOdJu5dVFytk50tP2cR1D6o80kZ8NJCr5s_vvdeqf8k7lqJxNbEF_c0qx&_nc_ohc=H8IAuf4FCqMQ7kNvwGO0A74&_nc_oc=AdnmR3kJeMbooCQoeDd6unLcysog0WUUGGnj9fFfOmIOxxtu0a7b6JHO8NQHnUlI650&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=I-UVa2-NU4jAaVdvduvgCg&oh=00_AfbbPyfjE1UgEHJN8s7vHyGPKsyU9q9apjcq0ARqJCtcwA&oe=68C28AE9"
   ],
-  operation: "Alquiler"
+  operation: "Venta"
 };

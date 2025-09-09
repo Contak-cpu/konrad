@@ -1,7 +1,7 @@
 import { Property } from '../../types';
 
 export const sanRoque: Property = {
-  id: 13,
+  id: 12,
   title: "🏭 Galpón Industrial - San Roque",
   address: "San Roque",
   type: "Galpón",

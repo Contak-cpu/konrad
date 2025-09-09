@@ -10,6 +10,7 @@ import { gavazza } from './gavazza';
 import { peronCastex } from './peronCastex';
 import { pestalozzi } from './pestalozzi';
 import { sanRoque } from './sanRoque';
+import { victoria547 } from './victoria547';
 
 export const properties: Property[] = [
   giachino2455,
@@ -19,6 +20,7 @@ export const properties: Property[] = [
   urquiza,
   saluzzi,
   giachino,
+  victoria547,
   gavazza,
   peronCastex,
   pestalozzi,

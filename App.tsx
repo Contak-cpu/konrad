@@ -50,7 +50,7 @@ const HomePage: React.FC = () => {
   // State to hold the property selected for detailed view. Null means no property is selected.
   const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
   // Hook for managing favorites
-  const { toggleFavorite, isFavorite, getFavoriteProperties } = useFavorites();
+  const { toggleFavorite, isFavorite } = useFavorites();
   // State for property filters, initialized to show all properties.
   const [filters, setFilters] = useState<Filters>({
     searchTerm: '',
@@ -174,7 +174,7 @@ const HomePage: React.FC = () => {
   );
 };
 
-const App: React.FC = () => {
+const AppContent: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { toggleFavorite, isFavorite, getFavoriteProperties } = useFavorites();
@@ -255,29 +255,35 @@ const App: React.FC = () => {
   }, [location.pathname]);
 
   return (
+    <div className="flex flex-col min-h-screen bg-gray-50">
+      <Header onViewChange={handleViewChange} currentView={currentView} />
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/favoritos" element={<FavoritesPage />} />
+          <Route path="/requisitos" element={<RequirementsSection />} />
+          <Route path="/contacto" element={<ContactSection />} />
+          <Route path="/ventas" element={<SalesSection />} />
+          <Route 
+            path="/registrar-propiedad" 
+            element={
+              <FormPropiedades 
+                onComplete={handleFormComplete}
+                onSave={handleFormSave}
+              />
+            } 
+          />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+const App: React.FC = () => {
+  return (
     <FavoritesProvider>
-      <div className="flex flex-col min-h-screen bg-gray-50">
-        <Header onViewChange={handleViewChange} currentView={currentView} />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/favoritos" element={<FavoritesPage />} />
-            <Route path="/requisitos" element={<RequirementsSection />} />
-            <Route path="/contacto" element={<ContactSection />} />
-            <Route path="/ventas" element={<SalesSection />} />
-            <Route 
-              path="/registrar-propiedad" 
-              element={
-                <FormPropiedades 
-                  onComplete={handleFormComplete}
-                  onSave={handleFormSave}
-                />
-              } 
-            />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <AppContent />
     </FavoritesProvider>
   );
 };

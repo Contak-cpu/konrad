@@ -194,6 +194,7 @@ const App: React.FC = () => {
 
   // Handler to change view and navigate
   const handleViewChange = (view: View) => {
+    console.log('Cambiando a vista:', view);
     if (view === 'home') {
       navigate('/');
     } else {
@@ -216,8 +217,10 @@ const App: React.FC = () => {
 
   // Favorites page component
   const FavoritesPage: React.FC = () => {
+    console.log('FavoritesPage se está renderizando');
     const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
     const favoriteProperties = getFavoriteProperties(allProperties);
+    console.log('FavoritesPage - Propiedades favoritas:', favoriteProperties.length);
 
     const handleSelectProperty = (property: Property) => {
       setSelectedProperty(property);

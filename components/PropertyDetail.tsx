@@ -59,9 +59,11 @@ const PropertyDetail: React.FC<PropertyDetailProps> = ({ property, onBack }) => 
                 <span className="text-sm sm:text-base">{property.address}</span>
             </div>
 
-            <ImageGallery images={images} alt={property.title} />
+            <div className="mb-6 sm:mb-8">
+              <ImageGallery images={images} alt={property.title} />
+            </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mt-6 sm:mt-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
                 <div className="lg:col-span-2 bg-white p-4 sm:p-6 rounded-lg shadow-sm border">
                     <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start pb-4 border-b gap-3 sm:gap-0">
                         <div>

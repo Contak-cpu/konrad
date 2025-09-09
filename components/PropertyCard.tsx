@@ -54,27 +54,27 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
       onKeyPress={(e) => (e.key === 'Enter' || e.key === ' ') && onSelectProperty(property)}
       aria-label={`Ver detalles de ${property.title}`}
     >
-      <div className="relative">
+      <div className="relative overflow-hidden">
         <img 
           src={property.imageUrl} 
           alt={property.title} 
-          className="w-full h-48 sm:h-56 object-cover" 
+          className="w-full h-48 sm:h-56 object-cover transition-transform duration-300 group-hover:scale-105" 
           loading="lazy"
         />
         <button 
           onClick={handleFavoriteClick}
-          className="absolute top-4 left-4 p-2 bg-black/40 rounded-full text-white hover:bg-black/60 transition-colors"
+          className="absolute top-3 sm:top-4 left-3 sm:left-4 p-2 bg-black/40 rounded-full text-white hover:bg-black/60 transition-colors touch-manipulation z-10"
           aria-label={isFavorited ? 'Quitar de favoritos' : 'Añadir a favoritos'}
         >
-          <HeartIcon className={`h-6 w-6 transition-all ${isFavorited ? 'fill-red-500 stroke-red-500' : 'fill-transparent stroke-white'}`} />
+          <HeartIcon className={`h-5 w-5 sm:h-6 sm:w-6 transition-all ${isFavorited ? 'fill-red-500 stroke-red-500' : 'fill-transparent stroke-white'}`} />
         </button>
-        <div className={`absolute top-4 right-4 px-3 py-1 text-sm font-semibold rounded-full ${property.available === 'Inmediato' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}`}>
+        <div className={`absolute top-3 sm:top-4 right-3 sm:right-4 px-2 sm:px-3 py-1 text-xs sm:text-sm font-semibold rounded-full ${property.available === 'Inmediato' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}`}>
           {property.available}
         </div>
         <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-gradient-to-t from-black/80 via-black/60 to-transparent">
-          <h3 className="text-lg sm:text-xl font-bold text-white drop-shadow-lg">
+          <h3 className="text-base sm:text-lg md:text-xl font-bold text-white drop-shadow-lg">
             {formatPrice(property.price)} 
-            {property.price > 0 && <span className="font-normal text-sm sm:text-base"> / mes</span>}
+            {property.price > 0 && <span className="font-normal text-xs sm:text-sm md:text-base"> / mes</span>}
           </h3>
         </div>
       </div>

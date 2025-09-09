@@ -26,5 +26,6 @@ export const hilarioLagos: Property = {
     "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/536269619_1331991275448711_7603663378573725252_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFrLuw-gWr4q50qqITN0c0ORiSWnKGU8IBGJJacoZTwgE7rtLZghw_EHZT7SqUTFFcwfxhl9aXsGmbrQiochY3e&_nc_ohc=hATlYYrm7SgQ7kNvwGYGXBF&_nc_oc=AdkH5E_L8LHWVJoip3M1rLsJxsPcxZUk4-h3pritw19wXMkoqx_l-nqCJR8V62ZxD-0&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=NFa_-KzlG7u3s6X8EtB_jA&oh=00_AfbwAFO4-b3_CGOtG3MRz1DNIT9OWADTfkqei6nfXLOvSA&oe=68C28ED2",
     "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/536280449_1331991278782044_837545730025376205_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGRd1ziYfR28OdEUnCVtpHEFmreHpPw4G8Wat4ek_Dgb2444hkTRs3sHXjdV5F4qZhprlxaudsg_JW7k0cxtel-&_nc_ohc=M81nqWqfW7AQ7kNvwHJCVv8&_nc_oc=AdmbU4fxNEB6QnNYPqd4jJW9QoPZtx3g2tWz3YZeyt4PYHddwwBEFt3HE9vVOnN6vpE&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=MR0rAPd56WPAoVNLYNcS-w&oh=00_AfaFCF0Dz8v5WvPFYctY9OJ0takzG6uudUjryG5BGOqxxg&oe=68C2827D"
   ],
-  operation: "Alquiler"
+  operation: "Alquiler",
+  hidden: true
 };

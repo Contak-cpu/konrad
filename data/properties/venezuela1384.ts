@@ -1,0 +1,41 @@
+import { Property } from '../../types';
+
+export const venezuela1384: Property = {
+  id: 14,
+  title: "🏡 DEPARTAMENTO EN VENTA ¡Oportunidad ideal para invertir!",
+  address: "Venezuela 1384 – A solo una cuadra de la Circunvalación",
+  type: "Departamento",
+  rooms: 1,
+  price: 0, // Precio a consultar
+  additionalCosts: "Consultar",
+  description: "¿Buscás una propiedad para generar renta inmediata? Este departamento de un dormitorio lo tiene TODO: Dormitorio con placard y calefactor, Comedor súper luminoso, Cocina con salida independiente, Baño completo con bañera, Pequeño patio de luz, ¡Con entrada vehicular!",
+  available: "Inmediato",
+  features: [
+    "Dormitorio con placard y calefactor",
+    "Comedor súper luminoso", 
+    "Cocina con salida independiente",
+    "Baño completo con bañera",
+    "Pequeño patio de luz",
+    "Entrada vehicular",
+    "A solo una cuadra de la Circunvalación",
+    "Ideal para inversión"
+  ],
+  imageUrl: "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/524340997_1310174820963690_626939468754109958_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeG2oeShJbpwUzzEYr2ga3wHfPCoWM6qjMt88KhYzqqMyxTQj-tREKIZW3NzvUCH6gFCkhdN2NW4bpyqIRfdK5jz&_nc_ohc=bORUCIWsA_gQ7kNvwFjLEAZ&_nc_oc=Adlt6Ey1JUgEtB9HUqm983ykwMMuRXHkhRXuEZqZ2-2lLwvLIRDg3dtj0FjszCj3hZ0&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=atJ3xpRnIii3WrB4Qdf6Aw&oh=00_AfYg0qNSbhH1DFFxytRN9CEUmstijzwlEzmZGuE1sMkctg&oe=68C654DB",
+  images: [
+    "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/524340997_1310174820963690_626939468754109958_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeG2oeShJbpwUzzEYr2ga3wHfPCoWM6qjMt88KhYzqqMyxTQj-tREKIZW3NzvUCH6gFCkhdN2NW4bpyqIRfdK5jz&_nc_ohc=bORUCIWsA_gQ7kNvwFjLEAZ&_nc_oc=Adlt6Ey1JUgEtB9HUqm983ykwMMuRXHkhRXuEZqZ2-2lLwvLIRDg3dtj0FjszCj3hZ0&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=atJ3xpRnIii3WrB4Qdf6Aw&oh=00_AfYg0qNSbhH1DFFxytRN9CEUmstijzwlEzmZGuE1sMkctg&oe=68C654DB",
+    "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/523983137_1310174910963681_8817779400911878967_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGXnxLY_mC6HbexnI9D9OLYK6rFT3q1wlArqsVPerXCUJziWNpQ71SzWm5WzmJmOxAx5oP62SojeTbcuFs-ayuH&_nc_ohc=ifdEeSENvLgQ7kNvwGjrog4&_nc_oc=Adl9llYda0ffPfl309n9NeEI3l5DZezi1i4XRenlAZPd5rcb_TXwuu0wT3WYh_MpB3U&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=xgkI36oMow8-WlM6ErtP6w&oh=00_Afb7s7EcFsO6EcdwCC3XqtY4Q37-B2VAzT4Jy3cKeWEfRg&oe=68C663E5",
+    "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/524458013_1310175030963669_5349876881473809034_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGKJvVLHX0s3REsMIkoBv_z27dhK40c0n_bt2ErjRzSf81TVkSgRcXRNfa_FQkBEPBUCUhQB9Il8SFkOEb-ihBW&_nc_ohc=TiUNPFOQzhAQ7kNvwEUcHmo&_nc_oc=Admx31dXM-7jdk4i4kRjIHqeRDcKErviVgUUIA9eGpv0k5fM5FVbC1yCa4NecVUk4Hc&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=GKlRB9LrZcIJY3jFgEpgzw&oh=00_Afb6ky7TZafdVtNz4UGmdjiedcd-R_NcCQZOO3I0WB1xsw&oe=68C6373A",
+    "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/524120444_1310175130963659_6668125464167804766_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEKWJXYu1i94gKPUWVWJfhpUR_YDXMOxOdRH9gNcw7E59mNxxfGo-kHl7oNy4D5d8dE2IPCMnft76IolPHUv4ro&_nc_ohc=vmn-J7XoEjoQ7kNvwG6Y7iX&_nc_oc=AdkqWTiu1jc0LOhuxjYrSpNEXmKEJaJflVnhvYQ4IANbza0RNu15DMZnv2MqcDejNXE&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=oS_mzS_U7YhbnPMhaT_rsA&oh=00_AfablnahDjuZMVipE8YB4TmYTUaqSB1_k77vC99gZVCVNA&oe=68C639A2",
+    "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/523835476_1310175217630317_2800257046081490504_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHIBodoM8LBFngv005vgbfrBBKNY5dM-AMEEo1jl0z4A7zlUhbPFtrAizv2AIk6FprCX4YfO1jEy1jjDvV0aEUA&_nc_ohc=XG5aGSE04iwQ7kNvwFWRcq_&_nc_oc=Admuzf40SEpKgK3RcKlcpTWPDhVP8Jgo6OhShHSd8MC2W5_PY1MGqK1fKZsj9Nk_5wg&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=boqia17lk542MQRLPV1YDQ&oh=00_AfYiaeVO3MjClp3gk8m62om4yGEgZ2uQtRKFScAbh06UEA&oe=68C63D88",
+    "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/523948688_1310175414296964_5414849190434708938_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEL83mIekXH0m4F-VU0yUU6yVf-NENUMpzJV_40Q1QynKJgKuKDuHMCTAuGikK4tb1ibukuBi9VGQ-mAo4sLC_u&_nc_ohc=_9zDut_whdgQ7kNvwEgubZt&_nc_oc=AdlCmUKcxmWZFNkrgL4Hxk6pyeWGCfm87kGxq1d_Zk55HsW85d5Quxcbfw7NTSNovEA&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=PyWx3ELEDjPMcM6JgTjZvw&oh=00_AfYmejsLcHcaTLGbGNvwxoam-FafXsUqsrNX92lVZE7R3A&oe=68C630C3",
+    "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/524057383_1310175534296952_7284467069280680801_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHl8DI65hgNe3Odh2ffYFHTxUemnNXXeArFR6ac1dd4CsHWVu3aXW78q86chLiCRAG9iev1p-lWm2OvyW-5AMMP&_nc_ohc=hbu0mLucHBUQ7kNvwEe-o28&_nc_oc=AdlCE1rhJnHmsFUqNrx5pHF1-aDQaqBkfTBqGNCEood_lqAoqqBeHpILcmsp5FHPNso&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=3Fk3jsSDOFHk-bwlOSQnWA&oh=00_AfasqFsRghuxNZIANYcnyAtJE8gMyD2ydno9C8SFbGnOTg&oe=68C6511E",
+    "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/523137581_1310175604296945_576322727695194617_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGlg-x3UYAeRKkwkPMNO6N7FaIKJOSIX1MVogok5IhfU1Kt7yhBgUL-fs9NxuYYQb7eRx8wUpxTijfSldmI38d4&_nc_ohc=0fn_o_iHEmUQ7kNvwEDduWk&_nc_oc=AdmhEzxxclNGqcfV83agvbvsjf315SBKHqv3ngcye5vpTMJAo2AfTZh8OmjbOH0egRo&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=qmJXJ8sqYARP-Kmojnz8Ug&oh=00_AfYweZhn1inv1guaBCApFKI11U0Qch-jQTG57PfiY10-zw&oe=68C63DD3",
+    "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/523407320_1310175680963604_8391817150048057033_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGSwpxcttkuRfaO_gU9jmPmTXnBEQ1OM_hNecERDU4z-Pd0_9yi9NjhbmHS4pnLbOnJJ0aMJpIrDm7maAJNT3Ex&_nc_ohc=A1RUMFSM7d4Q7kNvwHk0wlf&_nc_oc=AdkB0oYpmm4UKbk2P42OwMCjkIWnslLDDc62IWBG0yYofS34MBH4qSmQpPq2xxo5L80&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=mcsJ1Ht9qzUrdzQghJIO6g&oh=00_AfYczMd8rfMGBxFbzxyzXrI0F9dF_eHFPNcULxzNfE5R2w&oe=68C65115",
+    "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/523330438_1310176050963567_4530035604657577586_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEIxXi7idK9H9RbT_d4Ig2X0CjwlepKMaDQKPCV6koxoJHLDhNP1SAUkH6W8r_YMTRRDMEVKinmampnecaxm8sH&_nc_ohc=IOE_Y2-QyxEQ7kNvwEsFLxJ&_nc_oc=Admmi00eqTd436WusKhzh34O2v1e_AxRyP-BhOKCn4X4kJbMOXPlBTDHhjnReY7L3Us&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=Z4_7M8xw8pAUng0Nc7maGw&oh=00_Afa_5kD8rr5QHZ5nybzMASAtoKAo3pybsZVV1bMqmWJfgQ&oe=68C6390F",
+    "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/522845235_1310176100963562_3508063864123212444_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEV-vLuXaim3L9B-NQ_GeFsKrwF0w_-jZIqvAXTD_6NkpqKIGOo0IB0vEbMYeM6LkN4mg8BpYcTJxT6pSi_CM3p&_nc_ohc=U2RXSBI36eEQ7kNvwEIFf_o&_nc_oc=Adkrk58IbfP711tWZM7vtNwWpq5OtiVxQz-dF_NdZb7X7zINoiyW9tuTmaLRRG865-8&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=CSyp9ew8_Ur5DZZiKSQH9A&oh=00_AfY93QVEfpVB8ZChRsxxq920QO8WWPPj05JDvsAOmMw3uQ&oe=68C6433B",
+    "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/523365901_1310176160963556_4102445350310326645_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeElHEfRfkHPlGtlGRDaF3Aj64bOC8ONYcfrhs4Lw41hx1C67kT9W39DQ-RQ4WDk8e3-XOBij4Zm4NzfwIMfqZBX&_nc_ohc=8j_PL8FVo6cQ7kNvwHB6M5x&_nc_oc=AdkhtiOj2zYu15wZUyP4sPYmJXRd_MNGlyb658i69BevJkUt0OqgHF4RcRjJAQb78ZI&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=k4R_25AdCc3ZdkZCB2c5eA&oh=00_AfZ-q34fLTSPlXu9VG0VaL9URKBsdjRNoMoG6kZlhQM4Jw&oe=68C63FE2",
+    "https://scontent.fcor2-1.fna.fbcdn.net/v/t39.30808-6/524669353_1310176224296883_5642670975240621186_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeE6Auv-f5b7iNmF6r4Yb41iu_9LVmpDj1y7_0tWakOPXN7YLC1JEBlcBpp_H1snPlAi1GTT7Z5ho6EAaV-DPAF3&_nc_ohc=CwgsEJTGa3oQ7kNvwG0w3Ds&_nc_oc=Adktp_1-NlI9qBKoGUFDbacdYamMOv-VpLv05Bt5CoLuWFJLSziq7eO94saHoJo8l8s&_nc_zt=23&_nc_ht=scontent.fcor2-1.fna&_nc_gid=eiMLUlSulqvpslLc-ioIng&oh=00_AfZ2PsrnU8OTBQLe2b9ZvACRlsHZU53aMayUs-y_1Wbgzg&oe=68C65F7E",
+    "https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-6/523373332_1310176294296876_78759035003157388_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGqnifQha30_NDy6cDoAPedsUCyNSHgy6OxQLI1IeDLo8VH2JhWNEbJswBKRjSqncAo0dF1CakS-aXemL4igbKQ&_nc_ohc=hI7OErXeRHsQ7kNvwGZGxHJ&_nc_oc=AdlrwpJNquEw3TW5UwZ8OuIVgbj2gGSM8GyQyPTfTDzZVzhN2UcTyllXQexz9pE1UCQ&_nc_zt=23&_nc_ht=scontent.fcor2-2.fna&_nc_gid=_5vj9OaVWSyXs7sETL-FAA&oh=00_AfY6Qn5_8hwILFBAIL1vebJz4rsaL4mEqE0cijdiMk9CQw&oe=68C63C71"
+  ],
+  operation: "Venta"
+};

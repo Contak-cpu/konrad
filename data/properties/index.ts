@@ -12,6 +12,7 @@ import { pestalozzi } from './pestalozzi';
 import { sanRoque } from './sanRoque';
 import { victoria547 } from './victoria547';
 import { pestalozziLote } from './pestalozziLote';
+import { venezuela1384 } from './venezuela1384';
 
 export const properties: Property[] = [
   giachino2455,
@@ -27,6 +28,7 @@ export const properties: Property[] = [
   peronCastex,
   pestalozzi,
   sanRoque,
+  venezuela1384,
 ];
 
 // Función para actualizar una propiedad específica

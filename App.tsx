@@ -58,6 +58,8 @@ const HomePage: React.FC = () => {
     rooms: 'Todos',
     availability: 'Todos',
     priceRange: 'all',
+    priceMin: '',
+    priceMax: '',
     operation: 'Todos',
   });
   // State for sorting properties.
@@ -111,6 +113,15 @@ const HomePage: React.FC = () => {
       // Price range filter
       const priceRangeMatch = (() => {
           if (filters.priceRange === 'all') return true;
+          
+          // Si es filtro personalizado, usar priceMin y priceMax
+          if (filters.priceRange === 'custom') {
+            const minPrice = filters.priceMin ? Number(filters.priceMin) : 0;
+            const maxPrice = filters.priceMax ? Number(filters.priceMax) : Infinity;
+            return property.price >= minPrice && property.price <= maxPrice;
+          }
+          
+          // Filtros predefinidos
           const [min, max] = filters.priceRange.split('-').map(Number);
           return property.price >= min && property.price <= max;
       })();

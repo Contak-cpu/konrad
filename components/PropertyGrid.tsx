@@ -30,15 +30,15 @@ const PropertyGrid: React.FC<PropertyGridProps> = ({
   return (
     <div className="bg-gray-100 py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-8 gap-4">
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center sm:text-left">Nuestras Propiedades</h2>
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 sm:mb-8 gap-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full lg:w-auto">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800">Nuestras Propiedades</h2>
               
               {/* Botones de Operación */}
-              <div className="flex bg-white rounded-lg p-1 shadow-sm border border-gray-200">
+              <div className="flex bg-white rounded-lg p-1 shadow-sm border border-gray-200 w-full sm:w-auto">
                 <button
                   onClick={() => handleOperationChange('Todos')}
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                  className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 rounded-md text-xs sm:text-sm font-medium transition-colors ${
                     filters.operation === 'Todos'
                       ? 'bg-primary-600 text-white shadow-sm'
                       : 'text-gray-600 hover:text-primary-600 hover:bg-gray-50'
@@ -48,7 +48,7 @@ const PropertyGrid: React.FC<PropertyGridProps> = ({
                 </button>
                 <button
                   onClick={() => handleOperationChange('Alquiler')}
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                  className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 rounded-md text-xs sm:text-sm font-medium transition-colors ${
                     filters.operation === 'Alquiler'
                       ? 'bg-primary-600 text-white shadow-sm'
                       : 'text-gray-600 hover:text-primary-600 hover:bg-gray-50'
@@ -58,7 +58,7 @@ const PropertyGrid: React.FC<PropertyGridProps> = ({
                 </button>
                 <button
                   onClick={() => handleOperationChange('Venta')}
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                  className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 rounded-md text-xs sm:text-sm font-medium transition-colors ${
                     filters.operation === 'Venta'
                       ? 'bg-primary-600 text-white shadow-sm'
                       : 'text-gray-600 hover:text-primary-600 hover:bg-gray-50'
@@ -69,13 +69,13 @@ const PropertyGrid: React.FC<PropertyGridProps> = ({
               </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row items-center gap-2">
-                <label htmlFor="sort-by" className="text-gray-600 font-medium text-sm sm:text-base">Ordenar por:</label>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 w-full lg:w-auto">
+                <label htmlFor="sort-by" className="text-gray-600 font-medium text-sm">Ordenar por:</label>
                 <select 
                     id="sort-by"
                     value={sort}
                     onChange={(e) => setSort(e.target.value as SortOption)}
-                    className="px-3 sm:px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white text-gray-700 text-sm sm:text-base"
+                    className="w-full sm:w-auto px-3 sm:px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white text-gray-700 text-sm"
                 >
                     <option value="default">Recomendados</option>
                     <option value="price_asc">Precio: más bajo</option>

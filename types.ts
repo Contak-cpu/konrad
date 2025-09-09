@@ -24,6 +24,8 @@ export interface Filters {
   rooms: string;
   availability: string;
   priceRange: string; // Replaced priceMin and priceMax
+  priceMin: string; // Custom price range
+  priceMax: string; // Custom price range
   operation: string; // Add operation filter
 }
 

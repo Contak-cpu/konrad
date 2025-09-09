@@ -31,6 +31,7 @@ const FilterBar: React.FC<FilterBarProps> = ({ filters, setFilters }) => {
       rooms: 'Todos',
       availability: 'Todos',
       priceRange: 'all',
+      operation: 'Todos',
     });
   };
 

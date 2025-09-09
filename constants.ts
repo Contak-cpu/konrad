@@ -1,4 +1,5 @@
 import type { Property, FaqItem } from './types';
+import { properties } from './data/properties';
 
 export const WHATSAPP_NUMBER = '5492954475417';
 
@@ -29,6 +30,7 @@ export const FAQ_DATA: FaqItem[] = [
   }
 ];
 
+<<<<<<< HEAD
 export const properties: Property[] = [
   {
     id: 1,
@@ -276,3 +278,9 @@ export const properties: Property[] = [
     ]
   }
 ];
+=======
+// Exportar propiedades desde el módulo modular
+export { properties };
+
+
+>>>>>>> feature/ferrando-property-images

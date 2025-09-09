@@ -1,16 +1,21 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import PropertyGrid from './components/PropertyGrid';
 import PropertyDetail from './components/PropertyDetail';
+import FavoritesView from './components/FavoritesView';
 import RequirementsSection from './components/RequirementsSection';
 import ContactSection from './components/ContactSection';
+import SalesSection from './components/SalesSection';
 import Footer from './components/Footer';
+import { FormPropiedades } from './components/forms/propiedades';
 import { properties as allProperties } from './constants';
+import { useFavorites } from './hooks/useFavorites';
 import type { Property, Filters, SortOption } from './types';
 
 // This defines the possible main views of the application.
-type View = 'home' | 'requisitos' | 'contacto';
+type View = 'home' | 'favoritos' | 'requisitos' | 'contacto' | 'ventas' | 'registrar-propiedad';
 
 // Levenshtein distance function for fuzzy matching.
 // A lower number means the strings are more similar.
@@ -40,11 +45,12 @@ const levenshteinDistance = (a: string, b: string): number => {
   return matrix[b.length][a.length];
 };
 
-const App: React.FC = () => {
-  // State for the current main view (e.g., home, requirements).
-  const [view, setView] = useState<View>('home');
+// Home component with property listing
+const HomePage: React.FC = () => {
   // State to hold the property selected for detailed view. Null means no property is selected.
   const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
+  // Hook for managing favorites
+  const { toggleFavorite, isFavorite, getFavoriteProperties } = useFavorites();
   // State for property filters, initialized to show all properties.
   const [filters, setFilters] = useState<Filters>({
     searchTerm: '',
@@ -52,6 +58,7 @@ const App: React.FC = () => {
     rooms: 'Todos',
     availability: 'Todos',
     priceRange: 'all',
+    operation: 'Todos',
   });
   // State for sorting properties.
   const [sort, setSort] = useState<SortOption>('default');
@@ -59,6 +66,9 @@ const App: React.FC = () => {
   // Memoized calculation to filter and sort properties whenever filters or sort order change.
   const filteredProperties = useMemo(() => {
     let filtered = allProperties.filter(property => {
+      // Filter to hide properties marked as hidden (only those explicitly marked)
+      const isNotHidden = !property.hidden;
+      
       // Fuzzy Search Term filter (title or address)
       const searchTerm = filters.searchTerm.toLowerCase().trim();
       const searchTermMatch = (() => {
@@ -84,7 +94,6 @@ const App: React.FC = () => {
           );
       })();
 
-
       // Property type filter
       const typeMatch = filters.type === 'Todos' || property.type === filters.type;
 
@@ -106,7 +115,10 @@ const App: React.FC = () => {
           return property.price >= min && property.price <= max;
       })();
 
-      return searchTermMatch && typeMatch && roomsMatch && availabilityMatch && priceRangeMatch;
+      // Operation filter (Alquiler/Venta)
+      const operationMatch = filters.operation === 'Todos' || property.operation === filters.operation;
+
+      return isNotHidden && searchTermMatch && typeMatch && roomsMatch && availabilityMatch && priceRangeMatch && operationMatch;
     });
     
     // Apply sorting to the filtered list
@@ -118,11 +130,6 @@ const App: React.FC = () => {
 
     return filtered;
   }, [filters, sort]);
-
-  // Effect to scroll to the top of the page when view or selected property changes for better UX.
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [selectedProperty, view]);
 
   // Handler to set the selected property and switch to detail view.
   const handleSelectProperty = (property: Property) => {
@@ -139,24 +146,120 @@ const App: React.FC = () => {
     return <PropertyDetail property={selectedProperty} onBack={handleBackToListing} />;
   }
 
-  // Otherwise, render the main application layout.
+  return (
+    <>
+      <Hero filters={filters} setFilters={setFilters} />
+      <PropertyGrid 
+        properties={filteredProperties} 
+        onSelectProperty={handleSelectProperty} 
+        sort={sort}
+        setSort={setSort}
+        filters={filters}
+        setFilters={setFilters}
+        onToggleFavorite={toggleFavorite}
+        isFavorite={isFavorite}
+      />
+    </>
+  );
+};
+
+const App: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { toggleFavorite, isFavorite, getFavoriteProperties } = useFavorites();
+
+  // Get current view from URL
+  const getCurrentView = (): View => {
+    const path = location.pathname;
+    if (path === '/favoritos') return 'favoritos';
+    if (path === '/requisitos') return 'requisitos';
+    if (path === '/contacto') return 'contacto';
+    if (path === '/ventas') return 'ventas';
+    if (path === '/registrar-propiedad') return 'registrar-propiedad';
+    return 'home';
+  };
+
+  const currentView = getCurrentView();
+
+  // Handler to change view and navigate
+  const handleViewChange = (view: View) => {
+    if (view === 'home') {
+      navigate('/');
+    } else {
+      navigate(`/${view}`);
+    }
+  };
+
+  // Handler for form completion
+  const handleFormComplete = (data: any) => {
+    console.log('Propiedad registrada:', data);
+    alert('¡Propiedad registrada exitosamente!');
+    navigate('/');
+  };
+
+  // Handler for form save
+  const handleFormSave = (data: any) => {
+    console.log('Borrador guardado:', data);
+    // Aquí podrías mostrar una notificación más sutil
+  };
+
+  // Favorites page component
+  const FavoritesPage: React.FC = () => {
+    const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
+    const favoriteProperties = getFavoriteProperties(allProperties);
+
+    const handleSelectProperty = (property: Property) => {
+      setSelectedProperty(property);
+    };
+
+    const handleBackToListing = () => {
+      setSelectedProperty(null);
+    };
+
+    const handleBackToHome = () => {
+      navigate('/');
+    };
+
+    if (selectedProperty) {
+      return <PropertyDetail property={selectedProperty} onBack={handleBackToListing} />;
+    }
+
+    return (
+      <FavoritesView
+        favoriteProperties={favoriteProperties}
+        onBack={handleBackToHome}
+        onSelectProperty={handleSelectProperty}
+        onToggleFavorite={toggleFavorite}
+        isFavorite={isFavorite}
+      />
+    );
+  };
+
+  // Effect to scroll to the top of the page when route changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
-      <Header onViewChange={setView} currentView={view} />
+      <Header onViewChange={handleViewChange} currentView={currentView} />
       <main className="flex-grow">
-        {view === 'home' && (
-          <>
-            <Hero filters={filters} setFilters={setFilters} />
-            <PropertyGrid 
-              properties={filteredProperties} 
-              onSelectProperty={handleSelectProperty} 
-              sort={sort}
-              setSort={setSort}
-            />
-          </>
-        )}
-        {view === 'requisitos' && <RequirementsSection />}
-        {view === 'contacto' && <ContactSection />}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/favoritos" element={<FavoritesPage />} />
+          <Route path="/requisitos" element={<RequirementsSection />} />
+          <Route path="/contacto" element={<ContactSection />} />
+          <Route path="/ventas" element={<SalesSection />} />
+          <Route 
+            path="/registrar-propiedad" 
+            element={
+              <FormPropiedades 
+                onComplete={handleFormComplete}
+                onSave={handleFormSave}
+              />
+            } 
+          />
+        </Routes>
       </main>
       <Footer />
     </div>

@@ -18,6 +18,10 @@ const FavoritesView: React.FC<FavoritesViewProps> = ({
   onToggleFavorite,
   isFavorite
 }) => {
+  // Debug info
+  console.log('FavoritesView renderizado con:', favoriteProperties.length, 'propiedades');
+  console.log('Propiedades favoritas:', favoriteProperties);
+
   return (
     <div className="bg-gray-100 min-h-screen">
       {/* Header */}

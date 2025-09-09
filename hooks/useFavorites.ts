@@ -38,6 +38,8 @@ export const useFavorites = () => {
   };
 
   const toggleFavorite = (propertyId: number) => {
+    console.log('Toggle favorite para propiedad:', propertyId);
+    console.log('Favoritos actuales:', favorites);
     if (favorites.includes(propertyId)) {
       removeFromFavorites(propertyId);
     } else {
@@ -46,11 +48,17 @@ export const useFavorites = () => {
   };
 
   const isFavorite = (propertyId: number) => {
-    return favorites.includes(propertyId);
+    const result = favorites.includes(propertyId);
+    console.log(`¿Es favorita la propiedad ${propertyId}?`, result);
+    return result;
   };
 
   const getFavoriteProperties = (allProperties: Property[]) => {
-    return allProperties.filter(property => favorites.includes(property.id));
+    const result = allProperties.filter(property => favorites.includes(property.id));
+    console.log('Propiedades favoritas encontradas:', result.length);
+    console.log('IDs de favoritos:', favorites);
+    console.log('Propiedades disponibles:', allProperties.map(p => p.id));
+    return result;
   };
 
   return {

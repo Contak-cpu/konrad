@@ -217,7 +217,6 @@ const App: React.FC = () => {
   // Favorites page component
   const FavoritesPage: React.FC = () => {
     const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
-    const { favorites } = useFavorites(); // Obtener el estado actual de favoritos
     const favoriteProperties = getFavoriteProperties(allProperties);
 
     const handleSelectProperty = (property: Property) => {

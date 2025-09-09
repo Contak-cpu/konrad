@@ -7,7 +7,7 @@ export const venezuela1384: Property = {
   type: "Departamento",
   rooms: 1,
   price: 0, // Precio a consultar
-  additionalCosts: "Consultar",
+  additionalCosts: "📞 Consultar",
   description: "¿Buscás una propiedad para generar renta inmediata? Este departamento de un dormitorio lo tiene TODO: Dormitorio con placard y calefactor, Comedor súper luminoso, Cocina con salida independiente, Baño completo con bañera, Pequeño patio de luz, ¡Con entrada vehicular!",
   available: "Inmediato",
   features: [

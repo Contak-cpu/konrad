@@ -41,6 +41,9 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
   const isFavorited = isFavorite ? isFavorite(property.id) : false;
 
   const formatPrice = (price: number) => {
+    if (price === 0) {
+      return '📞 Consultar';
+    }
     return new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', minimumFractionDigits: 0 }).format(price);
   };
 
@@ -90,7 +93,10 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
           {property.available}
         </div>
         <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-gradient-to-t from-black/70 to-transparent">
-          <h3 className="text-lg sm:text-xl font-bold text-white">{formatPrice(property.price)} <span className="font-normal text-sm sm:text-base">/ mes</span></h3>
+          <h3 className="text-lg sm:text-xl font-bold text-white">
+            {formatPrice(property.price)} 
+            {property.price > 0 && <span className="font-normal text-sm sm:text-base"> / mes</span>}
+          </h3>
         </div>
       </div>
       <div className="p-3 sm:p-4 flex-grow flex flex-col">

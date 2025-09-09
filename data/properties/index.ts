@@ -8,7 +8,6 @@ import { saluzzi } from './saluzzi';
 import { giachino } from './giachino';
 import { gavazza } from './gavazza';
 import { peronCastex } from './peronCastex';
-import { pestalozzi } from './pestalozzi';
 import { sanRoque } from './sanRoque';
 import { victoria547 } from './victoria547';
 import { pestalozziLote } from './pestalozziLote';
@@ -26,7 +25,6 @@ export const properties: Property[] = [
   pestalozziLote,
   gavazza,
   peronCastex,
-  pestalozzi,
   sanRoque,
   venezuela1384,
 ];

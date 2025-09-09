@@ -7,7 +7,7 @@ export const pestalozziLote: Property = {
   type: "Lote",
   rooms: 0,
   price: 0, // Precio a consultar
-  additionalCosts: "Consultar",
+  additionalCosts: "📞 Consultar",
   description: "¡ÚLTIMO LOTE DISPONIBLE! Ubicación estratégica con posibilidad de hacer locales, departamentos o tu casa. Medidas: 10 x 20 (200 mts2). Ubicado en la cuadra que abarca las calles de Unanue a San Luis y de Pestalozzi a V. Sarsfield.",
   available: "Inmediato",
   features: ["200 mts2", "10 x 20", "Ubicación estratégica", "Posibilidad de locales", "Posibilidad de departamentos", "Posibilidad de casa", "Barrio Empleados de Comercio"],

@@ -10,7 +10,7 @@ import ContactSection from './components/ContactSection';
 import SalesSection from './components/SalesSection';
 import Footer from './components/Footer';
 import { FormPropiedades } from './components/forms/propiedades';
-import { properties as allProperties } from './constants';
+import { properties as allProperties } from './data/properties';
 import { useFavorites } from './hooks/useFavorites';
 import type { Property, Filters, SortOption } from './types';
 

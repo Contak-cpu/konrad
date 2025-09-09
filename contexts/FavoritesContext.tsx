@@ -1,9 +1,24 @@
-import { useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import type { Property } from '../types';
 
 const FAVORITES_KEY = 'konrad-favorites';
 
-export const useFavorites = () => {
+interface FavoritesContextType {
+  favorites: number[];
+  addToFavorites: (propertyId: number) => void;
+  removeFromFavorites: (propertyId: number) => void;
+  toggleFavorite: (propertyId: number) => void;
+  isFavorite: (propertyId: number) => boolean;
+  getFavoriteProperties: (allProperties: Property[]) => Property[];
+}
+
+const FavoritesContext = createContext<FavoritesContextType | undefined>(undefined);
+
+interface FavoritesProviderProps {
+  children: ReactNode;
+}
+
+export const FavoritesProvider: React.FC<FavoritesProviderProps> = ({ children }) => {
   const [favorites, setFavorites] = useState<number[]>([]);
 
   // Cargar favoritos del localStorage al montar el componente
@@ -11,7 +26,9 @@ export const useFavorites = () => {
     const savedFavorites = localStorage.getItem(FAVORITES_KEY);
     if (savedFavorites) {
       try {
-        setFavorites(JSON.parse(savedFavorites));
+        const parsedFavorites = JSON.parse(savedFavorites);
+        console.log('Cargando favoritos desde localStorage:', parsedFavorites);
+        setFavorites(parsedFavorites);
       } catch (error) {
         console.error('Error al cargar favoritos:', error);
         setFavorites([]);
@@ -21,20 +38,29 @@ export const useFavorites = () => {
 
   // Guardar favoritos en localStorage cuando cambien
   useEffect(() => {
+    console.log('Guardando favoritos en localStorage:', favorites);
     localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
   }, [favorites]);
 
   const addToFavorites = (propertyId: number) => {
+    console.log('Agregando a favoritos:', propertyId);
     setFavorites(prev => {
       if (!prev.includes(propertyId)) {
-        return [...prev, propertyId];
+        const newFavorites = [...prev, propertyId];
+        console.log('Nuevos favoritos:', newFavorites);
+        return newFavorites;
       }
       return prev;
     });
   };
 
   const removeFromFavorites = (propertyId: number) => {
-    setFavorites(prev => prev.filter(id => id !== propertyId));
+    console.log('Removiendo de favoritos:', propertyId);
+    setFavorites(prev => {
+      const newFavorites = prev.filter(id => id !== propertyId);
+      console.log('Favoritos después de remover:', newFavorites);
+      return newFavorites;
+    });
   };
 
   const toggleFavorite = (propertyId: number) => {
@@ -61,7 +87,7 @@ export const useFavorites = () => {
     return result;
   };
 
-  return {
+  const value: FavoritesContextType = {
     favorites,
     addToFavorites,
     removeFromFavorites,
@@ -69,6 +95,18 @@ export const useFavorites = () => {
     isFavorite,
     getFavoriteProperties
   };
+
+  return (
+    <FavoritesContext.Provider value={value}>
+      {children}
+    </FavoritesContext.Provider>
+  );
 };
 
-
+export const useFavorites = (): FavoritesContextType => {
+  const context = useContext(FavoritesContext);
+  if (context === undefined) {
+    throw new Error('useFavorites debe ser usado dentro de un FavoritesProvider');
+  }
+  return context;
+};

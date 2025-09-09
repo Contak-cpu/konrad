@@ -11,7 +11,7 @@ import SalesSection from './components/SalesSection';
 import Footer from './components/Footer';
 import { FormPropiedades } from './components/forms/propiedades';
 import { properties as allProperties } from './data/properties';
-import { useFavorites } from './hooks/useFavorites';
+import { FavoritesProvider, useFavorites } from './contexts/FavoritesContext';
 import type { Property, Filters, SortOption } from './types';
 
 // This defines the possible main views of the application.
@@ -255,28 +255,30 @@ const App: React.FC = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
-      <Header onViewChange={handleViewChange} currentView={currentView} />
-      <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/favoritos" element={<FavoritesPage />} />
-          <Route path="/requisitos" element={<RequirementsSection />} />
-          <Route path="/contacto" element={<ContactSection />} />
-          <Route path="/ventas" element={<SalesSection />} />
-          <Route 
-            path="/registrar-propiedad" 
-            element={
-              <FormPropiedades 
-                onComplete={handleFormComplete}
-                onSave={handleFormSave}
-              />
-            } 
-          />
-        </Routes>
-      </main>
-      <Footer />
-    </div>
+    <FavoritesProvider>
+      <div className="flex flex-col min-h-screen bg-gray-50">
+        <Header onViewChange={handleViewChange} currentView={currentView} />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/favoritos" element={<FavoritesPage />} />
+            <Route path="/requisitos" element={<RequirementsSection />} />
+            <Route path="/contacto" element={<ContactSection />} />
+            <Route path="/ventas" element={<SalesSection />} />
+            <Route 
+              path="/registrar-propiedad" 
+              element={
+                <FormPropiedades 
+                  onComplete={handleFormComplete}
+                  onSave={handleFormSave}
+                />
+              } 
+            />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </FavoritesProvider>
   );
 };
 

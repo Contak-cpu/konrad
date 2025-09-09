@@ -1,0 +1,44 @@
+import { Property } from '../../types';
+import { giachino2455 } from './giachino2455';
+import { ferrando841 } from './ferrando841';
+import { alberdiEdison } from './alberdiEdison';
+import { hilarioLagos } from './hilarioLagos';
+import { urquiza } from './urquiza';
+import { saluzzi } from './saluzzi';
+import { giachino } from './giachino';
+import { gavazza } from './gavazza';
+import { peronCastex } from './peronCastex';
+import { pestalozzi } from './pestalozzi';
+import { sanRoque } from './sanRoque';
+
+export const properties: Property[] = [
+  giachino2455,
+  ferrando841,
+  alberdiEdison,
+  hilarioLagos,
+  urquiza,
+  saluzzi,
+  giachino,
+  gavazza,
+  peronCastex,
+  pestalozzi,
+  sanRoque,
+];
+
+// Función para actualizar una propiedad específica
+export const updateProperty = (id: number, updates: Partial<Property>): Property[] => {
+  return properties.map(property => 
+    property.id === id ? { ...property, ...updates } : property
+  );
+};
+
+// Función para obtener una propiedad por ID
+export const getPropertyById = (id: number): Property | undefined => {
+  return properties.find(property => property.id === id);
+};
+
+// Función para filtrar propiedades visibles
+export const getVisibleProperties = (): Property[] => {
+  return properties.filter(property => !property.hidden);
+};
+

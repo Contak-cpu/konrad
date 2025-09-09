@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import type { Property } from '../types';
 import { WHATSAPP_NUMBER } from '../constants';
 
@@ -28,10 +28,17 @@ const HeartIcon = (props: React.SVGProps<SVGSVGElement>) => ( <svg xmlns="http:/
 interface PropertyCardProps {
   property: Property;
   onSelectProperty: (property: Property) => void;
+  onToggleFavorite?: (propertyId: number) => void;
+  isFavorite?: (propertyId: number) => boolean;
 }
 
-const PropertyCard: React.FC<PropertyCardProps> = ({ property, onSelectProperty }) => {
-  const [isFavorited, setIsFavorited] = useState(false);
+const PropertyCard: React.FC<PropertyCardProps> = ({ 
+  property, 
+  onSelectProperty, 
+  onToggleFavorite, 
+  isFavorite 
+}) => {
+  const isFavorited = isFavorite ? isFavorite(property.id) : false;
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', minimumFractionDigits: 0 }).format(price);
@@ -51,7 +58,9 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property, onSelectProperty 
   
   const handleFavoriteClick = (e: React.MouseEvent) => {
     e.stopPropagation(); // Prevent card click event from firing
-    setIsFavorited(!isFavorited);
+    if (onToggleFavorite) {
+      onToggleFavorite(property.id);
+    }
   };
 
   return (

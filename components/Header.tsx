@@ -14,7 +14,7 @@ const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-type View = 'home' | 'requisitos' | 'contacto' | 'ventas' | 'registrar-propiedad';
+type View = 'home' | 'favoritos' | 'requisitos' | 'contacto' | 'ventas' | 'registrar-propiedad';
 
 interface HeaderProps {
     onViewChange: (view: View) => void;
@@ -40,6 +40,7 @@ const Header: React.FC<HeaderProps> = ({ onViewChange, currentView }) => {
 
   const navLinks: { id: View; label: string }[] = [
     { id: 'home', label: 'Propiedades' },
+    { id: 'favoritos', label: 'Favoritos' },
     { id: 'ventas', label: 'Ventas' },
     { id: 'requisitos', label: 'Requisitos' },
     { id: 'contacto', label: 'Contacto' },

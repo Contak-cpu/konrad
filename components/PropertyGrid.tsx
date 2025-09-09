@@ -9,9 +9,20 @@ interface PropertyGridProps {
   setSort: React.Dispatch<React.SetStateAction<SortOption>>;
   filters: Filters;
   setFilters: React.Dispatch<React.SetStateAction<Filters>>;
+  onToggleFavorite?: (propertyId: number) => void;
+  isFavorite?: (propertyId: number) => boolean;
 }
 
-const PropertyGrid: React.FC<PropertyGridProps> = ({ properties, onSelectProperty, sort, setSort, filters, setFilters }) => {
+const PropertyGrid: React.FC<PropertyGridProps> = ({ 
+  properties, 
+  onSelectProperty, 
+  sort, 
+  setSort, 
+  filters, 
+  setFilters, 
+  onToggleFavorite, 
+  isFavorite 
+}) => {
   const handleOperationChange = (operation: string) => {
     setFilters(prev => ({ ...prev, operation }));
   };
@@ -76,7 +87,13 @@ const PropertyGrid: React.FC<PropertyGridProps> = ({ properties, onSelectPropert
         {properties.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {properties.map(property => (
-              <PropertyCard key={property.id} property={property} onSelectProperty={onSelectProperty} />
+              <PropertyCard 
+                key={property.id} 
+                property={property} 
+                onSelectProperty={onSelectProperty}
+                onToggleFavorite={onToggleFavorite}
+                isFavorite={isFavorite}
+              />
             ))}
           </div>
         ) : (

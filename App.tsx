@@ -4,16 +4,18 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import PropertyGrid from './components/PropertyGrid';
 import PropertyDetail from './components/PropertyDetail';
+import FavoritesView from './components/FavoritesView';
 import RequirementsSection from './components/RequirementsSection';
 import ContactSection from './components/ContactSection';
 import SalesSection from './components/SalesSection';
 import Footer from './components/Footer';
 import { FormPropiedades } from './components/forms/propiedades';
 import { properties as allProperties } from './constants';
+import { useFavorites } from './hooks/useFavorites';
 import type { Property, Filters, SortOption } from './types';
 
 // This defines the possible main views of the application.
-type View = 'home' | 'requisitos' | 'contacto' | 'ventas' | 'registrar-propiedad';
+type View = 'home' | 'favoritos' | 'requisitos' | 'contacto' | 'ventas' | 'registrar-propiedad';
 
 // Levenshtein distance function for fuzzy matching.
 // A lower number means the strings are more similar.
@@ -47,6 +49,8 @@ const levenshteinDistance = (a: string, b: string): number => {
 const HomePage: React.FC = () => {
   // State to hold the property selected for detailed view. Null means no property is selected.
   const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
+  // Hook for managing favorites
+  const { toggleFavorite, isFavorite, getFavoriteProperties } = useFavorites();
   // State for property filters, initialized to show all properties.
   const [filters, setFilters] = useState<Filters>({
     searchTerm: '',
@@ -152,6 +156,8 @@ const HomePage: React.FC = () => {
         setSort={setSort}
         filters={filters}
         setFilters={setFilters}
+        onToggleFavorite={toggleFavorite}
+        isFavorite={isFavorite}
       />
     </>
   );
@@ -160,10 +166,12 @@ const HomePage: React.FC = () => {
 const App: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { toggleFavorite, isFavorite, getFavoriteProperties } = useFavorites();
 
   // Get current view from URL
   const getCurrentView = (): View => {
     const path = location.pathname;
+    if (path === '/favoritos') return 'favoritos';
     if (path === '/requisitos') return 'requisitos';
     if (path === '/contacto') return 'contacto';
     if (path === '/ventas') return 'ventas';
@@ -195,6 +203,38 @@ const App: React.FC = () => {
     // Aquí podrías mostrar una notificación más sutil
   };
 
+  // Favorites page component
+  const FavoritesPage: React.FC = () => {
+    const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
+    const favoriteProperties = getFavoriteProperties(allProperties);
+
+    const handleSelectProperty = (property: Property) => {
+      setSelectedProperty(property);
+    };
+
+    const handleBackToListing = () => {
+      setSelectedProperty(null);
+    };
+
+    const handleBackToHome = () => {
+      navigate('/');
+    };
+
+    if (selectedProperty) {
+      return <PropertyDetail property={selectedProperty} onBack={handleBackToListing} />;
+    }
+
+    return (
+      <FavoritesView
+        favoriteProperties={favoriteProperties}
+        onBack={handleBackToHome}
+        onSelectProperty={handleSelectProperty}
+        onToggleFavorite={toggleFavorite}
+        isFavorite={isFavorite}
+      />
+    );
+  };
+
   // Effect to scroll to the top of the page when route changes
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -206,6 +246,7 @@ const App: React.FC = () => {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/favoritos" element={<FavoritesPage />} />
           <Route path="/requisitos" element={<RequirementsSection />} />
           <Route path="/contacto" element={<ContactSection />} />
           <Route path="/ventas" element={<SalesSection />} />

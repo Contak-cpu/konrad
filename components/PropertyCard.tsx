@@ -2,6 +2,7 @@ import React from 'react';
 import type { Property } from '../types';
 import { WHATSAPP_NUMBER } from '../constants';
 import { MapPinIcon, BedIcon, HomeIcon, WhatsAppIcon, HeartIcon } from './icons';
+import OptimizedImage from './OptimizedImage';
 
 
 interface PropertyCardProps {
@@ -55,16 +56,13 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
       aria-label={`Ver detalles de ${property.title}`}
     >
       <div className="relative overflow-hidden">
-        <img 
+        <OptimizedImage 
           src={property.imageUrl} 
           alt={property.title} 
           className="w-full h-48 sm:h-56 object-cover transition-transform duration-300 group-hover:scale-105" 
           loading="lazy"
-          onError={(e) => {
-            console.log('Error cargando imagen:', property.imageUrl);
-            console.log('Propiedad:', property.title);
-            // Fallback a una imagen placeholder si falla
-            e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjZjNmNGY2Ii8+CjxyZWN0IHg9IjUwIiB5PSI1MCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNlNWU3ZWIiLz4KPHN2ZyB4PSIxNzUiIiB5PSIxMjUiIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjOWNhM2FmIj4KPHBhdGggZD0iTTMgOWw5LTcgOSA3djExYTIgMiAwIDAgMS0yIDJINWEyIDIgMCAwIDEtMi0yeiIvPgo8cG9seWxpbmUgcG9pbnRzPSI5IDIyIDkgMTIgMTUgMTIgMTUgMjIiLz4KPC9zdmc+Cjx0ZXh0IHg9IjIwMCIgeT0iMjgwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSJib2xkIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMzc0MTUxIj5JbWFnZW4gTm8gRGlzcG9uaWJsZTwvdGV4dD4KPC9zdmc+';
+          onError={() => {
+            console.warn('Error cargando imagen:', property.imageUrl, 'para propiedad:', property.title);
           }}
         />
         <button 

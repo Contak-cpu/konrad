@@ -9,13 +9,12 @@ import RequirementsSection from './components/RequirementsSection';
 import ContactSection from './components/ContactSection';
 import SalesSection from './components/SalesSection';
 import Footer from './components/Footer';
-import { FormPropiedades } from './components/forms/propiedades';
 import { properties as allProperties } from './data/properties';
 import { FavoritesProvider, useFavorites } from './contexts/FavoritesContext';
 import type { Property, Filters, SortOption } from './types';
 
 // This defines the possible main views of the application.
-type View = 'home' | 'favoritos' | 'requisitos' | 'contacto' | 'ventas' | 'registrar-propiedad';
+type View = 'home' | 'favoritos' | 'requisitos' | 'contacto' | 'ventas';
 
 // Levenshtein distance function for fuzzy matching.
 // A lower number means the strings are more similar.
@@ -186,7 +185,6 @@ const AppContent: React.FC = () => {
     if (path === '/requisitos') return 'requisitos';
     if (path === '/contacto') return 'contacto';
     if (path === '/ventas') return 'ventas';
-    if (path === '/registrar-propiedad') return 'registrar-propiedad';
     return 'home';
   };
 
@@ -202,18 +200,6 @@ const AppContent: React.FC = () => {
     }
   };
 
-  // Handler for form completion
-  const handleFormComplete = (data: any) => {
-    console.log('Propiedad registrada:', data);
-    alert('¡Propiedad registrada exitosamente!');
-    navigate('/');
-  };
-
-  // Handler for form save
-  const handleFormSave = (data: any) => {
-    console.log('Borrador guardado:', data);
-    // Aquí podrías mostrar una notificación más sutil
-  };
 
   // Favorites page component
   const FavoritesPage: React.FC = () => {
@@ -264,15 +250,6 @@ const AppContent: React.FC = () => {
           <Route path="/requisitos" element={<RequirementsSection />} />
           <Route path="/contacto" element={<ContactSection />} />
           <Route path="/ventas" element={<SalesSection />} />
-          <Route 
-            path="/registrar-propiedad" 
-            element={
-              <FormPropiedades 
-                onComplete={handleFormComplete}
-                onSave={handleFormSave}
-              />
-            } 
-          />
         </Routes>
       </main>
       <Footer />

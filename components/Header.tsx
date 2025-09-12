@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import OptimizedImage from './OptimizedImage';
 
 const MenuIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><line x1="4" x2="20" y1="12" y2="12" /><line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" /></svg>
@@ -68,10 +69,13 @@ const Header: React.FC<HeaderProps> = ({ onViewChange, currentView }) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <a onClick={(e) => { e.preventDefault(); onViewChange('home'); }} className="flex-shrink-0 cursor-pointer flex items-center space-x-3">
-            <img 
-              src="https://scontent.fcor2-2.fna.fbcdn.net/v/t39.30808-1/391612746_829589982355512_463664193374181098_n.jpg?stp=c62.0.885.885a_dst-jpg_s100x100_tt6&_nc_cat=104&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeEiwcpSgZpKFdqjCd1WdESoMNxWswv7RC8w3FazC_tEL1TjuG3g0kpHocRjtjsKPtudLeRuiWoHPhxYB8KuPs9E&_nc_ohc=ikNR9wwt2OQQ7kNvwGtOUeN&_nc_oc=Adk0IVp9EHQgszEMCN6Ql_KJL6LFksCMNdIAhKitJUb-veXlDRlk6Ejd4mFHLGkbXYQ&_nc_zt=24&_nc_ht=scontent.fcor2-2.fna&_nc_gid=ILEJ9h206vgXNIWB6Ii2jQ&oh=00_AfZ4bqwHGtEYgBwNOZmwnJYsvtB8MQW-dBiVcj3fZnKN6w&oe=68C271A9" 
+            <OptimizedImage 
+              src="https://cdn.discordapp.com/attachments/592889741318291456/1416114056380551229/391612746_829589982355512_463664193374181098_n.png?ex=68c5aa7d&is=68c458fd&hm=d776c1cae883a48bcfbff69a33646cce169bec0e20d580fccecda846b9f2bc13&" 
               alt="Konrad Inversiones Logo" 
               className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg object-cover shadow-sm"
+              onError={() => {
+                console.warn('Error cargando logo de Konrad Inversiones');
+              }}
             />
             <h1 className="text-xl sm:text-2xl font-bold text-primary-900">
               Konrad <span className="font-light text-primary-600">Inversiones</span>
@@ -85,12 +89,6 @@ const Header: React.FC<HeaderProps> = ({ onViewChange, currentView }) => {
             ))}
           </nav>
           <div className="hidden md:flex items-center space-x-4">
-            <button
-              onClick={() => onViewChange('registrar-propiedad')}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
-            >
-              Registrar Propiedad
-            </button>
             <a 
               href={whatsAppUrl} 
               target="_blank" 
@@ -116,12 +114,6 @@ const Header: React.FC<HeaderProps> = ({ onViewChange, currentView }) => {
               </NavLink>
             ))}
             <div className="px-3 py-2 mt-4 border-t space-y-2">
-              <button
-                onClick={() => { onViewChange('registrar-propiedad'); setIsMenuOpen(false); }}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
-              >
-                Registrar Propiedad
-              </button>
               <a 
                 href={whatsAppUrl} 
                 target="_blank" 

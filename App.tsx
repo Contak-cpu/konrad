@@ -9,6 +9,7 @@ import RequirementsSection from './components/RequirementsSection';
 import ContactSection from './components/ContactSection';
 import SalesSection from './components/SalesSection';
 import Footer from './components/Footer';
+import MaintenancePage from './components/MaintenancePage';
 import { properties as allProperties } from './data/properties';
 import { FavoritesProvider, useFavorites } from './contexts/FavoritesContext';
 import type { Property, Filters, SortOption } from './types';
@@ -177,6 +178,12 @@ const AppContent: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { toggleFavorite, isFavorite, getFavoriteProperties } = useFavorites();
+  
+  // Estado para controlar la página de mantenimiento
+  // Cambia este valor a true para activar la página de mantenimiento
+  // Para activar: setIsMaintenanceMode(true)
+  // Para desactivar: setIsMaintenanceMode(false)
+  const [isMaintenanceMode, setIsMaintenanceMode] = useState(true);
 
   // Get current view from URL
   const getCurrentView = (): View => {
@@ -241,19 +248,25 @@ const AppContent: React.FC = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
-      <Header onViewChange={handleViewChange} currentView={currentView} />
-      <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/favoritos" element={<FavoritesPage />} />
-          <Route path="/requisitos" element={<RequirementsSection />} />
-          <Route path="/contacto" element={<ContactSection />} />
-          <Route path="/ventas" element={<SalesSection />} />
-        </Routes>
-      </main>
-      <Footer />
-    </div>
+    <>
+      {/* Página de mantenimiento - se muestra por encima de todo */}
+      <MaintenancePage isActive={isMaintenanceMode} />
+      
+      {/* Contenido principal de la aplicación */}
+      <div className="flex flex-col min-h-screen bg-gray-50">
+        <Header onViewChange={handleViewChange} currentView={currentView} />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/favoritos" element={<FavoritesPage />} />
+            <Route path="/requisitos" element={<RequirementsSection />} />
+            <Route path="/contacto" element={<ContactSection />} />
+            <Route path="/ventas" element={<SalesSection />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 

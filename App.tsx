@@ -183,6 +183,7 @@ const AppContent: React.FC = () => {
   // Cambia este valor a true para activar la página de mantenimiento
   // Para activar: setIsMaintenanceMode(true)
   // Para desactivar: setIsMaintenanceMode(false)
+  // ACTIVADO PARA PRUEBAS - 2024
   const [isMaintenanceMode, setIsMaintenanceMode] = useState(true);
 
   // Get current view from URL

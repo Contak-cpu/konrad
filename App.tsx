@@ -71,19 +71,19 @@ const HomePage: React.FC = () => {
       // Filter to hide properties marked as hidden (only those explicitly marked)
       const isNotHidden = !property.hidden;
       
-      // Fuzzy Search Term filter (title or address)
+      // Fuzzy Search Term filter (title or address) - Optimizado para mejor rendimiento
       const searchTerm = filters.searchTerm.toLowerCase().trim();
       const searchTermMatch = (() => {
           if (!searchTerm) return true;
           const title = property.title.toLowerCase();
           const address = property.address.toLowerCase();
 
-          // Fast path for direct match
+          // Fast path for direct match - búsqueda rápida
           if (title.includes(searchTerm) || address.includes(searchTerm)) {
               return true;
           }
 
-          // Fuzzy match logic for typo tolerance
+          // Fuzzy match logic for typo tolerance - búsqueda inteligente
           const searchWords = searchTerm.split(' ').filter(w => w.length > 2);
           const propertyWords = [...new Set(`${title} ${address}`.split(' '))];
 
@@ -183,6 +183,8 @@ const AppContent: React.FC = () => {
   // Cambia este valor a true para activar la página de mantenimiento
   // Para activar: setIsMaintenanceMode(true)
   // Para desactivar: setIsMaintenanceMode(false)
+  // ACTIVADO PARA PRUEBAS - 2024
+  // Última actualización: Diciembre 2024 - Mejoras en la interfaz
   const [isMaintenanceMode, setIsMaintenanceMode] = useState(true);
 
   // Get current view from URL

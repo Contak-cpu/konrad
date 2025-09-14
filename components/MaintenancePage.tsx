@@ -1,10 +1,10 @@
 import React from 'react';
 
 interface MaintenancePageProps {
-  isActive: boolean;
+  isActive?: boolean;
 }
 
-const MaintenancePage: React.FC<MaintenancePageProps> = ({ isActive }) => {
+const MaintenancePage: React.FC<MaintenancePageProps> = ({ isActive = true }) => {
   if (!isActive) return null;
 
   return (

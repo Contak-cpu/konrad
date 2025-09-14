@@ -249,26 +249,25 @@ const AppContent: React.FC = () => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  // Si está en modo mantenimiento, solo mostrar la página de mantenimiento
+  if (isMaintenanceMode) {
+    return <MaintenancePage isActive={true} />;
+  }
+
   return (
-    <>
-      {/* Página de mantenimiento - se muestra por encima de todo */}
-      <MaintenancePage isActive={isMaintenanceMode} />
-      
-      {/* Contenido principal de la aplicación */}
-      <div className="flex flex-col min-h-screen bg-gray-50">
-        <Header onViewChange={handleViewChange} currentView={currentView} />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/favoritos" element={<FavoritesPage />} />
-            <Route path="/requisitos" element={<RequirementsSection />} />
-            <Route path="/contacto" element={<ContactSection />} />
-            <Route path="/ventas" element={<SalesSection />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </>
+    <div className="flex flex-col min-h-screen bg-gray-50">
+      <Header onViewChange={handleViewChange} currentView={currentView} />
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/favoritos" element={<FavoritesPage />} />
+          <Route path="/requisitos" element={<RequirementsSection />} />
+          <Route path="/contacto" element={<ContactSection />} />
+          <Route path="/ventas" element={<SalesSection />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
   );
 };
 

@@ -185,7 +185,7 @@ const AppContent: React.FC = () => {
   // Para desactivar: setIsMaintenanceMode(false)
   // ACTIVADO PARA PRUEBAS - 2024
   // Última actualización: Diciembre 2024 - Mejoras en la interfaz
-  const [isMaintenanceMode, setIsMaintenanceMode] = useState(true);
+  const [isMaintenanceMode, setIsMaintenanceMode] = useState(false);
 
   // Get current view from URL
   const getCurrentView = (): View => {

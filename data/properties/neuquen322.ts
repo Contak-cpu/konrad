@@ -11,7 +11,7 @@ export const neuquen322: Property = {
   description: "Un dormitorio, living - comedor, cocina, baño y balcón",
   available: "Inmediato",
   features: ["Un dormitorio", "Living-comedor", "Cocina", "Baño", "Balcón"],
-  imageUrl: "/images/neuquen322.png",
+  imageUrl: "/images/neuquen322.5.png",
   images: [
     "/images/neuquen322.png",
     "/images/neuquen322.1.png",

@@ -11,7 +11,7 @@ export const localHugoDelCarril: Property = {
   description: "Cuenta con un privado y baño",
   available: "Inmediato",
   features: ["Local comercial", "Privado", "Baño", "Ubicación estratégica"],
-  imageUrl: "/images/local_hugodelcarril.jpg",
+  imageUrl: "/images/local_hugodelcarril7.jpg",
   images: [
     "/images/local_hugodelcarril.jpg",
     "/images/local_hugodelcarril2.jpg",

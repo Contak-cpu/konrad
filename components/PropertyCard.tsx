@@ -102,7 +102,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
             </div>
              <button 
                 onClick={handleWhatsAppClick}
-                className="w-full bg-green-500 hover:bg-green-600 text-white px-3 sm:px-4 py-2 rounded-lg flex items-center justify-center gap-2 transition-colors font-semibold text-sm sm:text-base"
+                className="w-full bg-green-700 hover:bg-green-800 text-white px-3 sm:px-4 py-2 rounded-lg flex items-center justify-center gap-2 transition-colors font-semibold text-sm sm:text-base"
                 aria-label={`Consultar por WhatsApp sobre ${property.title}`}
               >
                 <WhatsAppIcon className="h-4 w-4 sm:h-5 sm:w-5" />

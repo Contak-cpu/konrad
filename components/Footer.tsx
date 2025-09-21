@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
           {/* Información de la empresa */}
           <div className="lg:col-span-2">
             <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Konrad Inversiones</h3>
-            <p className="text-sm sm:text-base text-primary-200 mb-3 sm:mb-4">Desarrollos inmobiliarios y alquileres en Santa Rosa, La Pampa.</p>
+            <p className="text-sm sm:text-base text-primary-200 mb-3 sm:mb-4">Desarrollo inmobiliario, alquileres y ventas en Santa Rosa, La Pampa.</p>
             <div className="space-y-1 sm:space-y-2">
               <p className="text-xs sm:text-sm text-primary-300">
                 <span className="font-semibold">Dirección:</span> {officeAddress}

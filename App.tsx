@@ -10,6 +10,7 @@ import ContactSection from './components/ContactSection';
 import SalesSection from './components/SalesSection';
 import Footer from './components/Footer';
 import MaintenancePage from './components/MaintenancePage';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 import { properties as allProperties } from './data/properties';
 import { FavoritesProvider, useFavorites } from './contexts/FavoritesContext';
 import type { Property, Filters, SortOption } from './types';
@@ -267,6 +268,7 @@ const AppContent: React.FC = () => {
         </Routes>
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 };

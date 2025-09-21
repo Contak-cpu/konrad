@@ -14,7 +14,6 @@ const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => ( <svg xmlns="htt
 const Footer: React.FC = () => {
   const whatsAppUrl = `https://wa.me/${WHATSAPP_NUMBER}`;
   const phoneNumber = "+54 2954 47-5417";
-  const email = "consultas@konradinversiones.com";
   const officeAddress = "Av. Ameghino 602, Santa Rosa, La Pampa";
 
   const socialLinks = [
@@ -37,9 +36,6 @@ const Footer: React.FC = () => {
               </p>
               <p className="text-xs sm:text-sm text-primary-300">
                 <span className="font-semibold">Teléfono:</span> {phoneNumber}
-              </p>
-              <p className="text-xs sm:text-sm text-primary-300">
-                <span className="font-semibold">Email:</span> {email}
               </p>
             </div>
           </div>

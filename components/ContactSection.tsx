@@ -48,7 +48,6 @@ const ContactSection: React.FC = () => {
   
   // Información adicional de contacto
   const phoneNumber = "+54 2954 47-5417";
-  const email = "consultas@konradinversiones.com";
   const businessHours = "Lunes a Viernes: 9:00 - 18:00 hs";
   const saturdayHours = "Sábados: 9:00 - 13:00 hs";
 
@@ -81,15 +80,6 @@ const ContactSection: React.FC = () => {
             >
                 <p>Llamanos directamente para consultas inmediatas.</p>
                 <p className="font-semibold mt-1 text-primary-700">{phoneNumber}</p>
-            </ContactCard>
-
-            <ContactCard
-                icon={<MailIcon className="h-6 w-6" />}
-                title="Correo Electrónico"
-                href={`mailto:${email}`}
-            >
-                <p>Para consultas generales o envío de documentación.</p>
-                <p className="font-semibold mt-1 text-primary-700">{email}</p>
             </ContactCard>
           </div>
 

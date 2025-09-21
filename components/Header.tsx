@@ -55,7 +55,6 @@ const Header: React.FC<HeaderProps> = ({ onViewChange, currentView }) => {
           <div className="flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm gap-2 sm:gap-0">
             <div className="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-4">
               <span className="flex items-center">📞 {phoneNumber}</span>
-              <span className="flex items-center">✉️ consultas@konradinversiones.com</span>
             </div>
             <div className="text-center sm:text-right">
               <span className="hidden xs:inline">🏢 Av. Ameghino 602, Santa Rosa, La Pampa</span>

@@ -70,7 +70,7 @@ const Header: React.FC<HeaderProps> = ({ onViewChange, currentView }) => {
         <div className="flex items-center justify-between h-16 sm:h-20">
           <a onClick={(e) => { e.preventDefault(); onViewChange('home'); }} className="flex-shrink-0 cursor-pointer flex items-center space-x-3">
             <OptimizedImage 
-              src="https://media.discordapp.net/attachments/877739044228960266/1417519312213901482/391612746_829589982355512_463664193374181098_n.png?ex=68cac73c&is=68c975bc&hm=e478585b4ff512bdcc10a3d5b1f3520bcae88394e684519961fdcf4a8efee764&=&format=webp&quality=lossless&width=912&height=800" 
+              src="/images/logo.png" 
               alt="Konrad Inversiones Logo" 
               className="h-10 w-10 sm:h-12 sm:w-12 rounded-lg object-cover shadow-sm"
               onError={() => {

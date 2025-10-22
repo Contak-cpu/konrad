@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Property } from '../types';
 import { WHATSAPP_NUMBER } from '../constants';
+import { RoomDisplay } from './RoomDisplay';
 import ImageGallery from './ImageGallery';
 import RequirementsSection from './RequirementsSection';
 
@@ -31,7 +32,7 @@ const PropertyDetail: React.FC<PropertyDetailProps> = ({ property, onBack }) => 
     window.open(url, '_blank');
   };
 
-  const images = property.images && property.images.length > 0 ? property.images : [property.imageUrl];
+  const images = property.images && property.images.length > 0 ? property.images : (property.imageUrl ? [property.imageUrl] : []);
 
   // Construct a more precise address for Google Maps and create the embed URL.
   const fullAddress = `${property.address}, Santa Rosa, La Pampa, Argentina`;
@@ -60,7 +61,17 @@ const PropertyDetail: React.FC<PropertyDetailProps> = ({ property, onBack }) => 
             </div>
 
             <div className="mb-6 sm:mb-8">
-              <ImageGallery images={images} alt={property.title} />
+              {images.length > 0 ? (
+                <ImageGallery images={images} alt={property.title} />
+              ) : (
+                <div className="w-full aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
+                  <div className="text-center text-gray-600 p-8">
+                    <div className="text-4xl mb-4">📷</div>
+                    <div className="text-lg font-medium">Imágenes próximamente</div>
+                    <div className="text-sm text-gray-500 mt-2">Las fotos de esta propiedad estarán disponibles pronto</div>
+                  </div>
+                </div>
+              )}
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -68,10 +79,7 @@ const PropertyDetail: React.FC<PropertyDetailProps> = ({ property, onBack }) => 
                     <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start pb-4 border-b gap-3 sm:gap-0">
                         <div>
                             <h2 className="text-xl sm:text-2xl font-semibold">{property.type} en alquiler</h2>
-                             <div className="flex items-center text-gray-600 mt-2">
-                                <BedIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-primary-600"/>
-                                <span className="text-sm sm:text-base">{property.rooms} {property.rooms === 1 ? 'Dormitorio' : property.rooms === 0 ? 'Ambiente único' : 'Dormitorios'}</span>
-                            </div>
+                            <RoomDisplay property={property} className="mt-2" />
                         </div>
                          <div className={`px-3 sm:px-4 py-2 rounded-full font-medium text-sm sm:text-base ${property.available === 'Inmediato' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'} self-start sm:self-auto`}>
                             {property.available}

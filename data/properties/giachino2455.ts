@@ -22,7 +22,7 @@ export const giachino2455: Property = {
     "/images/giachino2455.6.png"
   ],
   operation: "Alquiler",
-  hidden: false
+  hidden: true
 };
 
 

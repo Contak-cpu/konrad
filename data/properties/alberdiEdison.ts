@@ -26,5 +26,5 @@ export const alberdiEdison: Property = {
     "/images/alberdi_y_edison10.png"
   ],
   operation: "Alquiler",
-  hidden: false
+  hidden: true
 };

@@ -1,13 +1,13 @@
 import { Property } from '../../types';
 
-export const neuquen322: Property = {
-  id: 18,
+export const neuquen322b: Property = {
+  id: 19,
   title: "⭐ Departamento sobre Neuquén Nº 322",
   address: "Neuquén Nº 322",
   type: "Departamento",
   rooms: 1,
-  price: 420000,
-  additionalCosts: "aprox $67.300 de expensas y municipales",
+  price: 400000,
+  additionalCosts: "$55.000 de expensas",
   description: "Un dormitorio, living - comedor, cocina, baño y balcón",
   available: "Inmediato",
   features: ["Un dormitorio", "Living-comedor", "Cocina", "Baño", "Balcón"],

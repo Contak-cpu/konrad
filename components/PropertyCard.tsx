@@ -2,6 +2,7 @@ import React from 'react';
 import type { Property } from '../types';
 import { WHATSAPP_NUMBER } from '../constants';
 import { MapPinIcon, BedIcon, HomeIcon, WhatsAppIcon, HeartIcon } from './icons';
+import { RoomDisplay } from './RoomDisplay';
 import OptimizedImage from './OptimizedImage';
 
 
@@ -56,15 +57,24 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
       aria-label={`Ver detalles de ${property.title}`}
     >
       <div className="relative overflow-hidden">
-        <OptimizedImage 
-          src={property.imageUrl} 
-          alt={property.title} 
-          className="w-full h-48 sm:h-56 object-cover transition-transform duration-300 group-hover:scale-105" 
-          loading="lazy"
-          onError={() => {
-            console.warn('Error cargando imagen:', property.imageUrl, 'para propiedad:', property.title);
-          }}
-        />
+        {property.imageUrl ? (
+          <OptimizedImage 
+            src={property.imageUrl} 
+            alt={property.title} 
+            className="w-full h-48 sm:h-56 object-cover transition-transform duration-300 group-hover:scale-105" 
+            loading="lazy"
+            onError={() => {
+              console.warn('Error cargando imagen:', property.imageUrl, 'para propiedad:', property.title);
+            }}
+          />
+        ) : (
+          <div className="w-full h-48 sm:h-56 bg-gray-200 flex items-center justify-center">
+            <div className="text-center text-gray-600 p-4">
+              <div className="text-2xl mb-2">📷</div>
+              <div className="text-sm font-medium">Imágenes próximamente</div>
+            </div>
+          </div>
+        )}
         <button 
           onClick={handleFavoriteClick}
           className="absolute top-3 sm:top-4 left-3 sm:left-4 p-2 bg-black/40 rounded-full text-white hover:bg-black/60 transition-colors touch-manipulation z-10"
@@ -90,16 +100,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
         </div>
         <div className="flex-grow" /> {/* Spacer to push content to bottom */}
         <div className="border-t pt-3 sm:pt-4 mt-3 sm:mt-4">
-            <div className="flex justify-between items-center text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4">
-              <div className="flex items-center gap-1 sm:gap-2" title="Tipo de propiedad">
-                <HomeIcon className="h-4 w-4 sm:h-5 sm:w-5 text-primary-600" />
-                <span className="truncate">{property.type}</span>
-              </div>
-              <div className="flex items-center gap-1 sm:gap-2" title="Dormitorios">
-                <BedIcon className="h-4 w-4 sm:h-5 sm:w-5 text-primary-600" />
-                <span className="truncate">{getRoomText(property.rooms)}</span>
-              </div>
-            </div>
+            <RoomDisplay property={property} className="mb-3 sm:mb-4" />
              <button 
                 onClick={handleWhatsAppClick}
                 className="w-full bg-green-700 hover:bg-green-800 text-white px-3 sm:px-4 py-2 rounded-lg flex items-center justify-center gap-2 transition-colors font-semibold text-sm sm:text-base"

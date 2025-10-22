@@ -4,6 +4,8 @@ import { alberdiEdison } from './alberdiEdison';
 import { berutti361 } from './berutti361';
 import { localHugoDelCarril } from './localHugoDelCarril';
 import { neuquen322 } from './neuquen322';
+import { neuquen322b } from './neuquen322b';
+import { callaqueo330 } from './callaqueo330';
 import { ferrando474 } from './ferrando474';
 
 export const properties: Property[] = [
@@ -12,6 +14,8 @@ export const properties: Property[] = [
   alberdiEdison,
   localHugoDelCarril,
   neuquen322,
+  neuquen322b,
+  callaqueo330,
   ferrando474,
 ];
 

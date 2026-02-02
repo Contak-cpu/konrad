@@ -4,11 +4,11 @@ import type { Property } from '../types';
 const FAVORITES_KEY = 'konrad-favorites';
 
 interface FavoritesContextType {
-  favorites: number[];
-  addToFavorites: (propertyId: number) => void;
-  removeFromFavorites: (propertyId: number) => void;
-  toggleFavorite: (propertyId: number) => void;
-  isFavorite: (propertyId: number) => boolean;
+  favorites: string[];
+  addToFavorites: (propertyId: string) => void;
+  removeFromFavorites: (propertyId: string) => void;
+  toggleFavorite: (propertyId: string) => void;
+  isFavorite: (propertyId: string) => boolean;
   getFavoriteProperties: (allProperties: Property[]) => Property[];
 }
 
@@ -19,7 +19,7 @@ interface FavoritesProviderProps {
 }
 
 export const FavoritesProvider: React.FC<FavoritesProviderProps> = ({ children }) => {
-  const [favorites, setFavorites] = useState<number[]>([]);
+  const [favorites, setFavorites] = useState<string[]>([]);
 
   // Cargar favoritos del localStorage al montar el componente
   useEffect(() => {
@@ -28,7 +28,11 @@ export const FavoritesProvider: React.FC<FavoritesProviderProps> = ({ children }
       try {
         const parsedFavorites = JSON.parse(savedFavorites);
         console.log('Cargando favoritos desde localStorage:', parsedFavorites);
-        setFavorites(parsedFavorites);
+        // Compat: versiones antiguas guardaban números
+        const normalized = Array.isArray(parsedFavorites)
+          ? parsedFavorites.map((v: unknown) => String(v))
+          : [];
+        setFavorites(normalized);
       } catch (error) {
         console.error('Error al cargar favoritos:', error);
         setFavorites([]);
@@ -42,7 +46,7 @@ export const FavoritesProvider: React.FC<FavoritesProviderProps> = ({ children }
     localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
   }, [favorites]);
 
-  const addToFavorites = (propertyId: number) => {
+  const addToFavorites = (propertyId: string) => {
     console.log('Agregando a favoritos:', propertyId);
     setFavorites(prev => {
       if (!prev.includes(propertyId)) {
@@ -54,7 +58,7 @@ export const FavoritesProvider: React.FC<FavoritesProviderProps> = ({ children }
     });
   };
 
-  const removeFromFavorites = (propertyId: number) => {
+  const removeFromFavorites = (propertyId: string) => {
     console.log('Removiendo de favoritos:', propertyId);
     setFavorites(prev => {
       const newFavorites = prev.filter(id => id !== propertyId);
@@ -63,7 +67,7 @@ export const FavoritesProvider: React.FC<FavoritesProviderProps> = ({ children }
     });
   };
 
-  const toggleFavorite = (propertyId: number) => {
+  const toggleFavorite = (propertyId: string) => {
     console.log('Toggle favorite para propiedad:', propertyId);
     console.log('Favoritos actuales:', favorites);
     if (favorites.includes(propertyId)) {
@@ -73,7 +77,7 @@ export const FavoritesProvider: React.FC<FavoritesProviderProps> = ({ children }
     }
   };
 
-  const isFavorite = (propertyId: number) => {
+  const isFavorite = (propertyId: string) => {
     const result = favorites.includes(propertyId);
     console.log(`¿Es favorita la propiedad ${propertyId}?`, result);
     return result;

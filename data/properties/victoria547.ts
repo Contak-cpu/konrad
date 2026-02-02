@@ -1,7 +1,7 @@
 import { Property } from '../../types';
 
 export const victoria547: Property = {
-  id: 13,
+  id: "13",
   title: "🏠 Departamento en Victoria 547 - 1º Piso",
   address: "Victoria 547 - 1º piso (Valmada XIII), entre Pampa y Entre Ríos",
   type: "Departamento",

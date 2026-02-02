@@ -1,7 +1,7 @@
 import { Property } from '../../types';
 
 export const pestalozziLote: Property = {
-  id: 14,
+  id: "14",
   title: "🏗️ Lote para Inversión - Pestalozzi, Barrio Empleados de Comercio",
   address: "Pestalozzi - Barrio Empleados de Comercio, Santa Rosa, La Pampa",
   type: "Lote",

@@ -11,9 +11,14 @@ import SalesSection from './components/SalesSection';
 import Footer from './components/Footer';
 import MaintenancePage from './components/MaintenancePage';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
-import { properties as allProperties } from './data/properties';
+import { properties as localProperties } from './data/properties';
 import { FavoritesProvider, useFavorites } from './contexts/FavoritesContext';
+import { AdminAuthProvider } from './contexts/AdminAuthContext';
+import { AdminPage } from './pages/AdminPage';
+import { AdminLogin } from './components/admin/AdminLogin';
+import { Toaster } from './components/ui/toaster';
 import type { Property, Filters, SortOption } from './types';
+import { getProperties as getDbProperties } from './utils/propertyManager';
 
 // This defines the possible main views of the application.
 type View = 'home' | 'favoritos' | 'requisitos' | 'contacto' | 'ventas';
@@ -47,7 +52,7 @@ const levenshteinDistance = (a: string, b: string): number => {
 };
 
 // Home component with property listing
-const HomePage: React.FC = () => {
+const HomePage: React.FC<{ allProperties: Property[] }> = ({ allProperties }) => {
   // State to hold the property selected for detailed view. Null means no property is selected.
   const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
   // Hook for managing favorites
@@ -141,7 +146,7 @@ const HomePage: React.FC = () => {
     }
 
     return filtered;
-  }, [filters, sort]);
+  }, [filters, sort, allProperties]);
 
   // Handler to set the selected property and switch to detail view.
   const handleSelectProperty = (property: Property) => {
@@ -179,6 +184,7 @@ const AppContent: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { toggleFavorite, isFavorite, getFavoriteProperties } = useFavorites();
+  const [allProperties, setAllProperties] = useState<Property[]>(localProperties);
   
   // Estado para controlar la página de mantenimiento
   // Cambia este valor a true para activar la página de mantenimiento
@@ -250,6 +256,24 @@ const AppContent: React.FC = () => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  // Cargar propiedades desde Supabase (fallback a datos locales)
+  useEffect(() => {
+    let mounted = true;
+    const load = async () => {
+      try {
+        const props = await getDbProperties();
+        if (!mounted) return;
+        setAllProperties(props && props.length > 0 ? props : localProperties);
+      } catch {
+        if (mounted) setAllProperties(localProperties);
+      }
+    };
+    void load();
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
   // Si está en modo mantenimiento, solo mostrar la página de mantenimiento
   if (isMaintenanceMode) {
     return <MaintenancePage isActive={true} />;
@@ -260,24 +284,29 @@ const AppContent: React.FC = () => {
       <Header onViewChange={handleViewChange} currentView={currentView} />
       <main className="flex-grow">
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage allProperties={allProperties} />} />
           <Route path="/favoritos" element={<FavoritesPage />} />
           <Route path="/requisitos" element={<RequirementsSection />} />
           <Route path="/contacto" element={<ContactSection />} />
           <Route path="/ventas" element={<SalesSection />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/*" element={<AdminPage />} />
         </Routes>
       </main>
       <Footer />
       <FloatingWhatsApp />
+      <Toaster />
     </div>
   );
 };
 
 const App: React.FC = () => {
   return (
-    <FavoritesProvider>
-      <AppContent />
-    </FavoritesProvider>
+    <AdminAuthProvider>
+      <FavoritesProvider>
+        <AppContent />
+      </FavoritesProvider>
+    </AdminAuthProvider>
   );
 };
 

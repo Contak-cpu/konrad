@@ -1,7 +1,7 @@
 import { Property } from '../../types';
 
 export const urquiza: Property = {
-  id: 6,
+  id: "6",
   title: "🏡 Casa Familiar Espaciosa en Urquiza - Con Garage",
   address: "Urquiza",
   type: "Casa",

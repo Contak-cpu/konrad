@@ -1,7 +1,7 @@
 import { Property } from '../../types';
 
 export const hilarioLagos: Property = {
-  id: 5,
+  id: "5",
   title: "🏢 Piso Premium en Hilario Lagos - Vistas Panorámicas",
   address: "Hilario Lagos",
   type: "Departamento",

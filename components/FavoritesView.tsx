@@ -7,8 +7,8 @@ interface FavoritesViewProps {
   favoriteProperties: Property[];
   onBack: () => void;
   onSelectProperty: (property: Property) => void;
-  onToggleFavorite: (propertyId: number) => void;
-  isFavorite: (propertyId: number) => boolean;
+  onToggleFavorite: (propertyId: string) => void;
+  isFavorite: (propertyId: string) => boolean;
 }
 
 const FavoritesView: React.FC<FavoritesViewProps> = ({

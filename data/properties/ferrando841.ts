@@ -1,7 +1,7 @@
 import { Property } from '../../types';
 
 export const ferrando841: Property = {
-  id: 3,
+  id: "3",
   title: "🏠 Departamento Familiar en Ferrando - 2 Dormitorios",
   address: "Ferrando 841",
   type: "Departamento",

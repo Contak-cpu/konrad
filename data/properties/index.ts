@@ -20,14 +20,14 @@ export const properties: Property[] = [
 ];
 
 // Función para actualizar una propiedad específica
-export const updateProperty = (id: number, updates: Partial<Property>): Property[] => {
+export const updateProperty = (id: string, updates: Partial<Property>): Property[] => {
   return properties.map(property => 
     property.id === id ? { ...property, ...updates } : property
   );
 };
 
 // Función para obtener una propiedad por ID
-export const getPropertyById = (id: number): Property | undefined => {
+export const getPropertyById = (id: string): Property | undefined => {
   return properties.find(property => property.id === id);
 };
 

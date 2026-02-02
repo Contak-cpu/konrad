@@ -9,8 +9,8 @@ import OptimizedImage from './OptimizedImage';
 interface PropertyCardProps {
   property: Property;
   onSelectProperty: (property: Property) => void;
-  onToggleFavorite?: (propertyId: number) => void;
-  isFavorite?: (propertyId: number) => boolean;
+  onToggleFavorite?: (propertyId: string) => void;
+  isFavorite?: (propertyId: string) => boolean;
 }
 
 const PropertyCard: React.FC<PropertyCardProps> = ({ 

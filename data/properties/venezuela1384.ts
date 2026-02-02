@@ -1,7 +1,7 @@
 import { Property } from '../../types';
 
 export const venezuela1384: Property = {
-  id: 15,
+  id: "15",
   title: "🏡 DEPARTAMENTO EN VENTA ¡Oportunidad ideal para invertir!",
   address: "Venezuela 1384 – A solo una cuadra de la Circunvalación",
   type: "Departamento",

@@ -1,7 +1,7 @@
 import { Property } from '../../types';
 
 export const saluzzi: Property = {
-  id: 7,
+  id: "7",
   title: "🌿 Casa Quinta Nueva en Saluzzi - A Estrenar",
   address: "D. Saluzzi 3750",
   type: "Casa",

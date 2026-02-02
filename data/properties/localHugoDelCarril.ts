@@ -1,7 +1,7 @@
 import { Property } from '../../types';
 
 export const localHugoDelCarril: Property = {
-  id: 17,
+  id: "17",
   title: "⭐ Local comercial en Hugo del Carril y Sgo Alvarez",
   address: "Hugo del Carril y Sgo Alvarez",
   type: "Local comercial",

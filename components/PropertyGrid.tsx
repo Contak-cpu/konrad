@@ -9,8 +9,8 @@ interface PropertyGridProps {
   setSort: React.Dispatch<React.SetStateAction<SortOption>>;
   filters: Filters;
   setFilters: React.Dispatch<React.SetStateAction<Filters>>;
-  onToggleFavorite?: (propertyId: number) => void;
-  isFavorite?: (propertyId: number) => boolean;
+  onToggleFavorite?: (propertyId: string) => void;
+  isFavorite?: (propertyId: string) => boolean;
 }
 
 const PropertyGrid: React.FC<PropertyGridProps> = ({ 

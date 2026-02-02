@@ -1,7 +1,7 @@
 import { Property } from '../../types';
 
 export const giachino2455: Property = {
-  id: 1,
+  id: "1",
   title: "⭐ Monoambiente sobre Giachino Nº 2455",
   address: "Giachino Nº 2455",
   type: "Monoambiente",

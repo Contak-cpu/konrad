@@ -1,5 +1,5 @@
 export interface Property {
-  id: number;
+  id: string;
   title: string;
   address: string;
   type: 'Monoambiente' | 'Departamento' | 'Casa' | 'Local comercial' | 'Lote' | 'Galpón';

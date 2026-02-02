@@ -1,7 +1,7 @@
 import { Property } from '../../types';
 
 export const alberdiEdison: Property = {
-  id: 4,
+  id: "4",
   title: "⭐ Departamento planta alta AMOBLADO, en Alberdi y Edison",
   address: "Alberdi y Edison",
   type: "Departamento",

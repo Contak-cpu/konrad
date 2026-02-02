@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import type { User } from '@supabase/supabase-js';
-import { supabase } from '@/lib/supabase/client';
+import { isSupabaseConfigured, supabase } from '@/lib/supabase/client';
 import { isCurrentUserAdmin, signInAdmin, signOut } from '@/lib/supabase/auth';
 
 interface AdminAuthContextType {
@@ -30,6 +30,13 @@ export const AdminAuthProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     let mounted = true;
 
     const init = async () => {
+      if (!isSupabaseConfigured) {
+        setUser(null);
+        setIsAdmin(false);
+        setLoading(false);
+        return;
+      }
+
       const { data } = await supabase.auth.getSession();
       if (!mounted) return;
 
@@ -45,7 +52,13 @@ export const AdminAuthProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       setLoading(false);
     };
 
-    init();
+    void init();
+
+    if (!isSupabaseConfigured) {
+      return () => {
+        mounted = false;
+      };
+    }
 
     const { data: sub } = supabase.auth.onAuthStateChange(async (_event, session) => {
       const nextUser = session?.user ?? null;

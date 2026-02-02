@@ -1,5 +1,5 @@
 import type { User } from '@supabase/supabase-js';
-import { supabase } from './client';
+import { isSupabaseConfigured, supabase } from './client';
 
 export type AdminLoginResult =
   | { ok: true; user: User }
@@ -22,6 +22,14 @@ export async function isCurrentUserAdmin(): Promise<boolean> {
 }
 
 export async function signInAdmin(email: string, password: string): Promise<AdminLoginResult> {
+  if (!isSupabaseConfigured) {
+    return {
+      ok: false,
+      error:
+        'Supabase no está configurado en el build. Verificá VITE_SUPABASE_URL y VITE_SUPABASE_ANON_KEY en Vercel y re-deploy.',
+    };
+  }
+
   const { data, error } = await supabase.auth.signInWithPassword({ email, password });
   if (error || !data.user) {
     return { ok: false, error: error?.message || 'No se pudo iniciar sesión' };
